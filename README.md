@@ -101,7 +101,7 @@ Sección Administrador (5 archivos):
 4. js/products.js - Gestión y listado de productos
 5. js/regions.js - Datos de regiones y comunas de Chile
 
-# Descripción de contenido archivos HTML
+# 3-Descripción de contenido archivos HTML
 
 **SECCIÓN TIENDA**
 
@@ -414,7 +414,7 @@ Tradición familiar en repostería chilena
 Nuevo
 Botones: Guardar, Cancelar, Vista previa
 
-#Plan de desarrollo por fases y división de tareas por integrante
+# 4-Plan de desarrollo por fases y división de tareas por integrante
 
 **FASE 1: DESARROLLO HTML (Semana 1 - Días 1-3)**
 
