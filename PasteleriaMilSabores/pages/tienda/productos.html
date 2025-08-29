@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo de Productos - Pastelería Mil Sabores</title>
+    <link rel="stylesheet" href="../../static/css/estilos.css">
+    <link rel="stylesheet" href="../../static/css/tienda.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Productos</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Productos</a></li>
+                <li><a href="../contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <section id="filtros">
+            <h2>Filtrar por Categoría</h2>
+           <form>
+                <label for="categoria">
+                <select id="categoria" name="categoria">
+                    <option value="todas">Todas</option>
+                    <option value="cuadradas">Tortas Cuadradas</option>
+                    <option value="circulares">Tortas Circulares</option>
+                    <option value="individuales">Postres Individuales</option>
+                    <option value="sin azucar">Productos Sin Azucar</option>
+                    <option value="sin gluten">Productos Sin Gluten</option>
+                    <option value="veganos">Productos Veganos</option>
+                </select>
+
+                <label for ="orden">Ordenar por:</label>
+                <select id="orden">
+                    <option value="precio-asc">Precio: Menor a Mayor</option>
+                    <option value="precio-desc">Precio: Mayor a Menor</option>
+                    <option value="popularidad">Popularidad</option>
+                    <option value="novedad">Novedad</option>
+                </select>
+           </form>
+        </section>
+
+        <section id="Catalogo">
+            <h2>Nuestros Productos</h2>
+             <!-- cambiar nombre de la div class al pasar a css  -->
+            <div class="galleta">  
+                <article class="producto">
+                    <img src="../../static/img/torta1.jpg" alt="Torta de Chocolate">
+                    <h3>Torta de Chocolate</h3>
+                    <p>Deliciosa torta de chocolate con cobertura de ganache.</p>
+                    <p class="precio">$25.00</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
+                    <button>Añadir al Carrito</button>
+                </article>
+                
+                <article class="producto">
+                    <img src="../../static/img/torta2.jpg" alt="Torta de Vainilla">
+                    <h3>Torta de Vainilla</h3>
+                    <p>Clásica torta de vainilla con relleno de crema pastelera.</p>
+                    <p class="precio">$22.00</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
+                    <button>Añadir al Carrito</button>
+                </article>
+
+                <article class="producto">
+                    <img src="../../static/img/torta3.jpg" alt="Torta Red Velvet">
+                    <h3>Torta Red Velvet</h3>
+                    <p>Exquisita torta Red Velvet con frosting de queso crema.</p>
+                    <p class="precio">$30.00</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
+                    <button>Añadir al Carrito</button>
+                </article>
+
+                <article class="producto">
+                    <img src="../../static/img/torta4.jpg" alt="Torta de Fresa">
+                    <h3>Torta de Fresa</h3>
+                    <p>Refrescante torta de fresa con capas de crema batida.</p>
+                    <p class="precio">$28.00</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
+                    <button>Añadir al Carrito</button>
+                </article>
+
+                <article class="producto">
+                    <img src="../../static/img/torta5.jpg" alt="Torta de Limón">
+                    <h3>Torta de Limón</h3>
+                    <p>Deliciosa torta de limón con glaseado de merengue.</p>
+                    <p class="precio">$26.00</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
+                    <button>Añadir al Carrito</button>
+                </article>
+
+                <article class="producto">
+                    <img src="../../static/img/torta6.jpg" alt="Torta de Zanahoria">
+                    <h3>Torta de Zanahoria</h3>
+                    <p>Clásica torta de zanahoria con nueces y frosting de queso crema.</p>
+                    <p class="precio">$27.00</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
+                    <button>Añadir al Carrito</button>
+                </article>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+            <p>Síguenos en 
+                <a href="#">Facebook</a>, 
+                <a href="#">Instagram</a>, 
+                <a href="#">Twitter</a>
+            </p>
+        </footer>
+    
+        <!--script src="../../static/js/tienda.js"></script>  para conectar con JS-->
+</body>
+   
+</html>
