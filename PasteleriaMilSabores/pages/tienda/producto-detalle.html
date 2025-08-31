@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - Pastelería Mil Sabores</title>
+    <link rel="stylesheet" href="../../static/css/estilos.css">
+    <link rel="stylesheet" href="../../static/css/tienda.css">
+</head>
+
+<body>
+    <header>
+        <h1>Detalle del Producto</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="../contacto.html">Contacto</a></li>
+            </ul>
+    </header>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="../../static/img/torta1.jpg" alt="Torta de Chocolate">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Torta de Chocolate</h2>
+                <p>Deliciosa torta de chocolate con cobertura de ganache.
+                    personalizable con mesajes especiales para cualquier ocasión.</p>
+                <p class="precio">$25.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <label for=tamaño>Tamaño:</label>
+                <select id="tamaño" name="tamaño">
+                    <option value="pequeña">Pequeña (4 porciones)</option>
+                    <option value="mediana">Mediana (8 porciones)</option>
+                    <option value="grande">Grande (12 porciones)</option>
+                </select><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+    </footer>
+
+    <!--script src="../../static/js/carrito.js"></script-->
+
+</body>
+</html>
