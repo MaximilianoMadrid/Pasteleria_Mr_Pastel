@@ -23,14 +23,46 @@
     <main>
         <section id="detalle-producto">
             <div class = "producto-imagen">
-                <img src="../../static/img/torta1.jpg" alt="Torta de Chocolate">
+                <img src="../../static/img/torta1.jpg" alt="Torta Cuadrada de Chocolate">
             </div>
 
             <div class = "producto-info">
-                <h2>Torta de Chocolate</h2>
+                <h2>Torta Cuadrada de Chocolate</h2>
                 <p>Deliciosa torta de chocolate con cobertura de ganache.
                     personalizable con mesajes especiales para cualquier ocasión.</p>
-                <p class="precio">$25.000 CLP</p>
+                <p class="precio">$45.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <label for=tamaño>Tamaño:</label>
+                <select id="tamaño" name="tamaño">
+                    <option value="pequeña">Pequeña (4 porciones)</option>
+                    <option value="mediana">Mediana (8 porciones)</option>
+                    <option value="grande">Grande (12 porciones)</option>
+                </select><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="../../static/img/torta2.jpg" alt="Torta Cuadrada de Frutas">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Torta Cuadrada de Frutas</h2>
+                <p>Una mezcla de frutas frescas y crema chantilly sobre un suave
+                   bizcocho de vainilla, ideal para celebraciones.</p>
+                <p class="precio">$50.000 CLP</p>
                 <label for="mensaje"> Mensaje en la torta:</label><br>
                 <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
 
