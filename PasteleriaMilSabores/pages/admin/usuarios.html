@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestión de Usuarios | Administración</title>
+  <meta name="page-scope" content="admin-usuarios">
+</head>
+
+
+<body>
+
+  <header role="banner" aria-label="Encabezado principal">
+    <nav aria-label="Ruta de navegación" hidden></nav>
+  </header>
+
+
+  <main id="contenido" role="main">
+    <section aria-labelledby="titulo-seccion" class="seccion-usuarios">
+
+      <header class="seccion-encabezado" aria-label="Encabezado de la sección Gestión de Usuarios">
+        <div class="encabezado-izquierda">
+          <h1 id="titulo-seccion">Gestión de Usuarios</h1>
+          <p id="descripcion-seccion">
+            Administra usuarios: crear, buscar, filtrar, ver detalles, editar, eliminar y cambiar estado.
+          </p>
+        </div>
+
+        <div class="encabezado-derecha">
+
+          <form class="buscador" role="search" aria-label="Buscar usuarios por nombre o correo electrónico">
+            <label for="q">Buscar</label>
+            <input
+              type="search"
+              id="q"
+              name="q"
+              placeholder="Nombre o correo electrónico…"
+              autocomplete="off"
+              inputmode="search"
+              aria-describedby="ayuda-busqueda"
+            />
+            <span id="ayuda-busqueda" class="texto-ayuda">
+              Escribe parte del nombre o del correo y presiona “Buscar”.
+            </span>
+            <button type="submit" aria-label="Ejecutar búsqueda">Buscar</button>
+            <button type="reset" aria-label="Limpiar búsqueda">Limpiar</button>
+          </form>
+
+
+          <a href="./nuevo-usuario.html" class="btn btn-primario" id="btn-nuevo-usuario" aria-label="Crear nuevo usuario">
+            Nuevo Usuario
+          </a>
+        </div>
+      </header>
+
+
+      <section aria-labelledby="titulo-filtros" class="panel-filtros">
+        <h2 id="titulo-filtros">Filtros</h2>
+        <form id="form-filtros" aria-describedby="ayuda-filtros">
+          <p id="ayuda-filtros" class="texto-ayuda">
+            Ajusta los filtros y selecciona “Aplicar filtros” para actualizar la lista.
+          </p>
+
+
+          <div class="filtro">
+            <label for="f-tipo">Tipo de usuario</label>
+            <select id="f-tipo" name="tipo" aria-label="Filtrar por tipo de usuario">
+              <option value="">Todos</option>
+              <option value="1">Cliente</option>
+              <option value="2">Vendedor</option>
+              <option value="3">Administrador</option>
+            </select>
+          </div>
+
+
+          <div class="filtro">
+            <label for="f-estado">Estado (ID numérico)</label>
+            <select id="f-estado" name="id_estado" aria-label="Filtrar por estado">
+              <option value="">Todos</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+
+          <fieldset class="filtro">
+            <legend>Fecha de registro</legend>
+            <div class="filtro-fecha">
+              <label for="f-desde">Desde</label>
+              <input type="date" id="f-desde" name="desde" />
+            </div>
+            <div class="filtro-fecha">
+              <label for="f-hasta">Hasta</label>
+              <input type="date" id="f-hasta" name="hasta" />
+            </div>
+          </fieldset>
+
+          <div class="filtros-acciones">
+            <button type="submit" aria-label="Aplicar filtros">Aplicar filtros</button>
+            <button type="reset" aria-label="Limpiar filtros">Limpiar filtros</button>
+          </div>
+        </form>
+      </section>
+
+
+      <section aria-labelledby="titulo-tabla-usuarios" class="tabla-contenedor">
+        <h2 id="titulo-tabla-usuarios">Lista de Usuarios</h2>
+
+        <div class="tabla-controles-superior" aria-live="polite" aria-atomic="true">
+          <p id="tabla-resumen" data-rol="tabla-resumen">
+            Mostrando <span data-bind="rango">0–0</span> de <span data-bind="total">0</span> usuarios.
+          </p>
+
+          <div class="tabla-opciones">
+            <label for="tam-pagina">Elementos por página</label>
+            <select id="tam-pagina" name="tam-pagina" aria-label="Seleccionar cantidad de elementos por página">
+              <option value="10" selected>10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tabla-responsiva" role="region" aria-label="Tabla de usuarios con desplazamiento horizontal">
+          <table id="tabla-usuarios">
+            <caption class="sr-only">Usuarios del sistema</caption>
+            <thead>
+              <tr>
+                <th scope="col" data-campo="id_usuario">id_usuario</th>
+                <th scope="col" data-campo="run">run</th>
+                <th scope="col" data-campo="nombres">nombres</th>
+                <th scope="col" data-campo="appaterno">appaterno</th>
+                <th scope="col" data-campo="amaterno">amaterno</th>
+                <th scope="col" data-campo="email">email</th>
+                <th scope="col" data-campo="password">password</th>
+                <th scope="col" data-campo="f_nacim">f_nacim</th>
+                <th scope="col" data-campo="id_t_usuario">id_t_usuario</th>
+                <th scope="col" data-campo="telefono">telefono</th>
+                <th scope="col" data-campo="direccion">direccion</th>
+                <th scope="col" data-campo="region">region</th>
+                <th scope="col" data-campo="comuna">comuna</th>
+                <th scope="col" data-campo="id_estado">id_estado</th>
+                <th scope="col" data-campo="desc_aplicado">desc_aplicado</th>
+                <th scope="col" data-campo="fecha_registro">fecha_registro</th>
+                <th scope="col" class="col-acciones">Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody id="usuarios-tbody">
+              <!-- Esta es solo una fila de ejemplo, eliminar al cargar datos reales con Javascript jejeje -->
+              <tr>
+                <td data-label="id_usuario">1</td>
+                <td data-label="run">19011022K</td>
+                <td data-label="nombres">Ana</td>
+                <td data-label="appaterno">Pérez</td>
+                <td data-label="amaterno">Gómez</td>
+                <td data-label="email">ana@example.com</td>
+                <td data-label="password">••••••••</td>
+                <td data-label="f_nacim">1990-03-15</td>
+                <td data-label="id_t_usuario">3</td>
+                <td data-label="telefono">+56 9 1234 5678</td>
+                <td data-label="direccion">Av. Siempre Viva 742</td>
+                <td data-label="region">RM</td>
+                <td data-label="comuna">Quinta Normal</td>
+                <td data-label="id_estado">1</td>
+                <td data-label="desc_aplicado">10% bienvenida</td>
+                <td data-label="fecha_registro">2025-08-20</td>
+                <td data-label="Acciones">
+                  <div class="acciones" role="group" aria-label="Acciones del usuario 1">
+                    <a href="./usuario-detalle.html?id=1" class="btn-accion" data-accion="ver" aria-label="Ver detalles del usuario 1">Ver</a>
+                    <a href="./usuario-editar.html?id=1" class="btn-accion" data-accion="editar" aria-label="Editar usuario 1">Editar</a>
+                    <button type="button" class="btn-accion" data-accion="eliminar" aria-label="Eliminar usuario 1">Eliminar</button>
+                    <button type="button" class="btn-accion" data-accion="cambiar-estado" aria-pressed="true" aria-label="Cambiar estado del usuario 1">
+                      Cambiar estado
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="17">
+                  <nav class="paginacion" aria-label="Paginación de usuarios">
+                    <button type="button" data-pag="primera" aria-label="Ir a la primera página">&laquo;</button>
+                    <button type="button" data-pag="anterior" aria-label="Ir a la página anterior">&lsaquo;</button>
+
+                    <ul class="paginas" role="list" aria-label="Lista de páginas">
+
+                      <li><button type="button" class="pagina actual" data-pag="1" aria-current="page" aria-label="Página 1, actual">1</button></li>
+                      <li><button type="button" class="pagina" data-pag="2" aria-label="Ir a la página 2">2</button></li>
+                      <li><button type="button" class="pagina" data-pag="3" aria-label="Ir a la página 3">3</button></li>
+                    </ul>
+
+                    <button type="button" data-pag="siguiente" aria-label="Ir a la página siguiente">&rsaquo;</button>
+                    <button type="button" data-pag="ultima" aria-label="Ir a la última página">&raquo;</button>
+                  </nav>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer role="contentinfo" aria-label="Información de pie de página">
+    <small>&copy; Mr. PAstel 2025 — Panel de administración</small>
+  </footer>
+
+
+</body>
+</html>

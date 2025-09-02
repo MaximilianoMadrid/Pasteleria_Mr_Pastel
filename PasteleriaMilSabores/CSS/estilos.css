@@ -533,3 +533,147 @@ footer {
 .comments button:hover { background: #b83e3e; }
 
 
+
+/* ==== ESTILOS ESPECÍFICOS REGISTRO ==== */
+
+/* Tokens locales (prefijo --reg- para evitar choques) */
+:root{
+  --reg-bg: #FFF5E1;
+  --reg-rosa: #FFC0CB;
+  --reg-choco: #8B4513;
+  --reg-text: #5D4037;
+  --reg-text-sec: #B0BEC5;
+
+  --reg-surface: #ffffff;
+  --reg-border: #eadbc4;
+  --reg-shadow: 0 4px 14px rgba(0,0,0,.06);
+  --reg-radius: 12px;
+  --reg-gap: 16px;
+  --reg-gap-lg: 24px;
+}
+
+/* Página de registro: tipografías y colores locales */
+.registro-page{
+  background: var(--reg-bg);
+  color: var(--reg-text);
+
+  /* Tipografías específicas de esta página */
+  font-family: "Lato", 'Poppins', sans-serif;
+  padding: 30px 0 50px;
+}
+
+/* Título principal de la página */
+.registro-page > h2{
+  font-family: "Pacifico", cursive;
+  color: var(--reg-choco);
+  font-size: clamp(24px, 3.2vw, 40px);
+  margin: 10px 0 18px;
+}
+
+/* Tarjeta del formulario */
+.registro-form fieldset{
+  background: var(--reg-surface);
+  border: 1px solid var(--reg-border);
+  border-radius: var(--reg-radius);
+  padding: clamp(16px, 3vw, 28px);
+  box-shadow: var(--reg-shadow);
+}
+
+.registro-form legend{
+  color: var(--reg-choco);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Grid de campos (mobile-first) */
+.registro-grid{
+  display: grid;
+  gap: var(--reg-gap-lg);
+}
+
+/* Cada bloque de campo */
+.rg-group{
+  display: grid;
+  gap: 6px;
+}
+
+/* Ayudas / notas */
+.rg-help{
+  color: var(--reg-text-sec);
+  font-size: 0.92rem;
+}
+
+/* Campos de formulario (scoped para no tocar otros) */
+.registro-form input[type="text"],
+.registro-form input[type="email"],
+.registro-form input[type="password"],
+.registro-form input[type="tel"],
+.registro-form input[type="date"],
+.registro-form input[list],
+.registro-form textarea,
+.registro-form select{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--reg-text);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .02s ease-in;
+}
+
+/* Focus visible accesible */
+.registro-form :where(input, textarea, select):focus-visible{
+  border-color: var(--reg-choco);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--reg-choco) 28%, transparent);
+}
+
+/* Acciones del formulario */
+.rg-actions{
+  display: flex;
+  gap: var(--reg-gap);
+  flex-wrap: wrap;
+}
+
+/* Botón base del registro (no afecta .btn global) */
+.rg-btn{
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .06s ease, background-color .15s ease, box-shadow .15s ease, color .15s ease;
+}
+
+/* Primario rosa de registro */
+.rg-btn--primary{
+  background: var(--reg-rosa);
+  color: var(--reg-text);
+  box-shadow: 0 6px 16px rgba(255, 192, 203, .35);
+}
+.rg-btn--primary:hover{ background: #ffb1be; }
+.rg-btn--primary:active{ transform: translateY(1px); }
+.rg-btn--primary:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--reg-choco) 30%, transparent);
+  outline-offset: 2px;
+}
+
+/* Responsividad: 2 columnas desde 768px */
+@media (min-width: 768px){
+  .registro-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Campo de ancho completo cuando haga falta */
+  .rg-group.--full{
+    grid-column: 1 / -1;
+  }
+}
+
+/* Ajustes menores de contraste en header dentro de registro (opcional) */
+.registro-page .nav-links a.active{
+  /* Mantén el color global; esto es opcional si quieres marcar "Registro" distinto */
+  /* color: var(--reg-choco); */
+}
+
