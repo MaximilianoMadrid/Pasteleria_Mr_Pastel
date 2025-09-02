@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!--De esta fuente depende el carro, no olvidar-->
   <link rel="stylesheet" href="/PasteleriaMilSabores/CSS/estilos.css">
   <title>Registro | Mr. Pastel</title>
 </head>
@@ -31,8 +32,9 @@
           <i class="fas fa-shopping-cart"></i>
           <span class="cart-count">0</span>
         </a>
-        <a href="login.html" class="login-link">Login / Registro</a>
-      </div>
+        <a href="/PasteleriaMilSabores/pages/tienda/login.html" class="login-link">Login</a>
+        <a href="/PasteleriaMilSabores/pages/tienda/registro.html" class="login-link">Registro</a>
+</div>
     </div>
     <br>
   </header>
@@ -58,7 +60,6 @@
             aria-describedby="ayuda-run"
             pattern="^(\d{1,2}\.?\d{3}\.?\d{3}-[\dkK])$"
           >
-          <small id="ayuda-run" class="rg-help">Formato con dígito verificador.</small>
         </div>
 
         <div class="rg-group">
@@ -552,7 +553,7 @@
             minlength="6"
             aria-describedby="ayuda-confirmar"
           >
-          <small id="ayuda-confirmar" class="rg-help">Debe coincidir con la contraseña.</small>
+
         </div>
 
         <div class="rg-actions --full">
