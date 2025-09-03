@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo de Productos - Pastelería Mil Sabores</title>
-    <link rel="stylesheet" href="../../static/css/estilos.css">
-    <link rel="stylesheet" href="../../static/css/tienda.css">
+       
+    <link rel="stylesheet" href="../../CSS/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Catálogo de Productos</h1>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../nosotros.html">Nosotros</a></li>
-                <li><a href="blog.html">Productos</a></li>
-                <li><a href="../contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+   <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/PasteleriaMilSabores/images/logo1.png" alt="Pastelería 1000 Sabores" >
+                <h1>1000 Sabores</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/PasteleriaMilSabores/index.html" >Home</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/productos.html" class="active">Productos</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/nosotros.html" >Nosotros</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/blog.html">Blogs</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="carrito.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="login.html" class="login-link">Login / Registro</a>
+            </div>
+        </div>
     </header>
-
         <section id="filtros">
             <h2>Filtrar por Categoría</h2>
            <form>
@@ -183,16 +196,39 @@
         </section>
 
         <footer>
-            <p>&copy; 2024 Pastelería Mil Sabores. Todos los derechos reservados.</p>
-            <p>Síguenos en 
-                <a href="#">Facebook</a>, 
-                <a href="#">Instagram</a>, 
-                <a href="#">Twitter</a>
-            </p>
-        </footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Pastelería 1000 Sabores</h3>
+                <p>Av. Dulce 123, Santiago, Chile</p>
+                <p>Tel: +56 9 1234 5678</p>
+                <p>Email: contacto@1000sabores.cl</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="/PasteleriaMilSabores/index.html">Home</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/productos.html">Productos</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/nosotros.html">Nosotros</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/blog1.html">Blogs</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pastelería 1000 Sabores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
     
         <!--script src="../../static/js/tienda.js"></script>  para conectar con JS-->
 </body>
-   
+
 </html>
 
