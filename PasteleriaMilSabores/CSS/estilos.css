@@ -797,3 +797,136 @@ footer {
     grid-column: 1 / -1;
   }
 }
+
+
+
+
+
+
+
+/* ===== ESTILOS ESPECÍFICOS CONTACTO (scope .contacto-page) ===== */
+
+/* Tokens (literalmente copié y pegué de login y registro para mantener la uniformidad... como ya están definidos más arriba podría haberlo omitido pero el toc me la gana y quiero tenerlo a la vista en cada bloque de css) */
+:root{
+  --reg-bg: #FFF5E1;
+  --reg-rosa: #FFC0CB;
+  --reg-choco: #8B4513;
+  --reg-text: #5D4037;
+  --reg-text-sec: #B0BEC5;
+
+  --reg-surface: #FFFFFF;
+  --reg-border: #eadbc4;
+  --reg-shadow: 0 4px 14px rgba(0,0,0,.06);
+  --reg-radius: 12px;
+  --reg-gap: 16px;
+  --reg-gap-lg: 24px;
+}
+
+/* Scope de la página de contacto */
+.contacto-page{
+  background: var(--reg-bg);
+  color: var(--reg-text);
+  font-family: "Lato", 'Poppins', sans-serif;
+  padding: 30px 0 50px;
+}
+
+/* Título */
+.contacto-page > h2{
+  font-family: "Pacifico", cursive;
+  color: var(--reg-choco);
+  font-size: clamp(24px, 3.2vw, 40px);
+  margin: 10px 0 18px;
+}
+
+/* Formulario como tarjeta */
+.contacto-form fieldset{
+  background: var(--reg-surface);
+  border: 10px solid var(--reg-border);
+  border-radius: var(--reg-radius);
+  padding: clamp(16px, 3vw, 28px);
+  box-shadow: var(--reg-shadow);
+}
+.contacto-form legend{
+  color: var(--reg-choco);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Grid */
+.contacto-grid{
+  display: grid;
+  gap: var(--reg-gap-lg);
+}
+
+/* Grupos y ayudas */
+.cg-group{ display: grid; gap: 6px; }
+.cp-intro{ color: var(--reg-text); margin: 0; }
+.cp-help{ color: var(--reg-text-sec); }
+
+/* Campos */
+.contacto-form input[type="text"],
+.contacto-form input[type="email"],
+.contacto-form input[type="tel"],
+.contacto-form textarea,
+.contacto-form select{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--reg-text);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .02s ease-in;
+}
+.contacto-form textarea{ resize: vertical; min-height: 140px; }
+
+/* Focus accesible */
+.contacto-form :where(input, textarea, select):focus-visible{
+  border-color: var(--reg-choco);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--reg-choco) 28%, transparent);
+}
+
+/* Acciones */
+.cg-actions{
+  display: flex;
+  gap: var(--reg-gap);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Botones */
+.cg-btn{
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .06s ease, background-color .15s ease, box-shadow .15s ease, color .15s ease;
+}
+.cg-btn--primary{
+  background: var(--reg-rosa);
+  color: var(--reg-text);
+  box-shadow: 0 6px 16px rgba(255, 192, 203, .35);
+}
+.cg-btn--primary:hover{ background: #ffb1be; }
+.cg-btn--primary:active{ transform: translateY(1px); }
+.cg-btn--primary:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--reg-choco) 30%, transparent);
+  outline-offset: 2px;
+}
+
+/* Utilidad: ancho completo en desktop */
+.--full{ grid-column: 1 / -1; }
+
+/* Responsivo: 2 columnas si algún día sumas más campos */
+@media (min-width: 768px){
+  .contacto-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  .cg-actions.--full,
+  .cg-group.--full{
+    grid-column: 1 / -1;
+  }
+}

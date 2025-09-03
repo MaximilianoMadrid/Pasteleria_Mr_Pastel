@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/PasteleriaMilSabores/CSS/estilos.css">
     <title>Contacto - Mr. Pastel</title>
 </head>
 <body>
 
-            <header>
+        <header>
         <div class="container header-content">
             <div class="logo">
                 <img src="/PasteleriaMilSabores/images/logo.png" alt="Pastelería 1000 Sabores" >
@@ -27,47 +32,83 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
-                <a href="login.html" class="login-link">Login / Registro</a>
+                <a href="/PasteleriaMilSabores/pages/tienda/login.html" class="login-link">Login</a>
+                <a href="/PasteleriaMilSabores/pages/tienda/registro.html" class="login-link">Registro</a>
             </div>
         </div>
         <br>
     </header>
 
 
-    <main>
-        <h2>Formulario de contacto </h2>
-        <form action="/contacto" method="POST">
+    <main class="container contacto-page">
+        <h2>Formulario de contacto</h2>
+
+        <form action="/contacto" method="POST" class="contacto-form" novalidate>
             <fieldset>
-                <legend>Contáctanos </legend>
-                <div class="form-group">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Esciba su nombre completo" autocomplete="name">
+            <legend>Contáctanos</legend>
+
+            <div class="contacto-grid">
+                <div class="cg-group --full">
+                <p class="cp-intro">
+                    ¿Tienes dudas o comentarios? Completa el formulario y te responderemos a la brevedad.
+                </p>
                 </div>
 
-                <div class="form-group">
-                    <label for="correo">Correo electrónico </label>
-                    <input type="email" id="correo" name="correo" required placeholder="ejemplo@email.com" autocomplete="email">
+                <div class="cg-group">
+                <label for="nombre">Nombre completo</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    placeholder="Escriba su nombre completo"
+                    autocomplete="name"
+                >
                 </div>
 
-                <div class="form-group">
-                    <label for="telefono">Teléfono (opcional)</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678">
+                <div class="cg-group">
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    required
+                    placeholder="ejemplo@email.com"
+                    autocomplete="email"
+                >
                 </div>
 
-                <div class="form-group">
-                    <label for="mensaje">Mensaje </label>
-                    <textarea id="mensaje" name="mensaje" required required placeholder="Escriba su mensaje"></textarea>
+                <div class="cg-group">
+                <label for="telefono">Teléfono (opcional)</label>
+                <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="+56 9 1234 5678"
+                    autocomplete="tel"
+                >
                 </div>
 
-                <div>
-                    <button type="submit">Enviar emnsaje </button>
+                <div class="cg-group --full">
+                <label for="mensaje">Mensaje</label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    required
+                    placeholder="Escriba su mensaje"
+                    rows="5"
+                ></textarea>
                 </div>
 
+                <div class="cg-actions --full">
+                <button type="submit" class="cg-btn cg-btn--primary">Enviar mensaje</button>
+                <span class="cp-help">También puedes escribirnos a <strong>contacto@mrpastel.cl</strong></span>
+                </div>
+            </div>
             </fieldset>
         </form>
-
-
     </main>
+
     
 </body>
 </html>
