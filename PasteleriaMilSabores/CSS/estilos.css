@@ -116,9 +116,10 @@ header {
 }
 
 .hero-content {
-    max-width: 500px;
+    flex-basis: 50%;
+    /* You can also use flex-grow and flex-shrink */
+    flex: 1 1 500px;
 }
-
 .hero-content h2 {
     font-size: 3rem;
     color: #d94f4f;
@@ -144,13 +145,15 @@ header {
 .btn-cta:hover {
     background: #b83e3e;
 }
-
-.hero-image img {
-    width: 400px;
+.hero-image {
+    flex-basis: 40%;
+    /* You can also use flex-grow and flex-shrink */
+    flex: 1 1 400px;
+    width: 100%;
     max-width: 100%;
+    height: auto;
     border-radius: 15px;
 }
-
 /* === PRODUCTOS DESTACADOS === */
 .productos-destacados {
     padding: 50px 0;
@@ -249,14 +252,46 @@ footer {
     margin-bottom: 8px;
 }
 
+.footer-links a {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease; /* Transición para color y tamaño */
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
 .footer-social a {
     margin-right: 15px;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
+
+/* Efecto hover con degradado */
+.footer-social a:hover .fab.fa-instagram {
+    background: -webkit-linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-social a .fa-facebook:hover {
+    color: #165aee;
+}
+.footer-social a .fa-twitter:hover {
+    color: #1da1f2;
+}
+.footer-social a .fa-youtube:hover {
+    color: #ff0000;
+}
+.footer-social a .fa-tiktok:hover {
+    color: #000000;
+}
+
 .footer-social a:hover {
-    color: #002aff;
+    color: #ff0000; /* Color de fallback para todos los íconos */
 }
 
 .footer-bottom {
