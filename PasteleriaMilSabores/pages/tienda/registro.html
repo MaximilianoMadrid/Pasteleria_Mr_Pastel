@@ -1,53 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!--De esta fuente depende el carro, no olvidar-->
+  <link rel="stylesheet" href="/PasteleriaMilSabores/CSS/estilos.css">
+  <title>Registro | Mr. Pastel</title>
 </head>
 <body>
-    
-    <form>
-        <h1>
-            Registro de usuario
-        </h1>
 
-        <label for="rut">RUT</label>
-        <br>
-        <input type="text" id="rut">
-        <br>
-        <label for="nombres">Nombres </label>
-        <br>
-        <input type="text" id="nombres">
-        <br>
-        <label for="appaterno">Apellido paterno </label>
-        <br>
-        <input type="text" id="appaterno">
-        <br>
-        <label for="amaterno">Apellido materno</label>
-        <br>
-        <input type="text" id="amaterno">
-        <br>
-        <label for="correo">Correo electrónico </label>
-        <br>
-        <input type="email" id="correo">
-        <br>
-        <label for="fnacimiento">Fecha de nacimiento</label>
-        <br>
-        <input type="date" id="fnacimiento">
-        <br>
-        <label for="telefono">Telefono</label>
-        <br>
-        <input type="tel" id="telefono">
-        <br>
-        <label for="direccion">Dirección </label>
-        <br>
-        <input type="text" id="direccion">
-        <br>
-        <label for="region">Región </label>
-        <br>
-        <input type="list" list="regiones" id="region">
-        <datalist id="regiones">
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <img src="/PasteleriaMilSabores/images/logo.png" alt="Pastelería 1000 Sabores">
+        <h1>Mr. Pastel</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="/PasteleriaMilSabores/pages/tienda/productos.html">Productos</a></li>
+          <li><a href="/PasteleriaMilSabores/pages/tienda/nosotros.html">Nosotros</a></li>
+          <li><a href="/PasteleriaMilSabores/pages/tienda/blog.html">Blogs</a></li>
+          <li><a href="/PasteleriaMilSabores/pages/tienda/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <a href="carrito.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+        <a href="/PasteleriaMilSabores/pages/tienda/login.html" class="login-link">Login</a>
+        <a href="/PasteleriaMilSabores/pages/tienda/registro.html" class="login-link">Registro</a>
+</div>
+    </div>
+    <br>
+  </header>
+
+
+<main class="container registro-page">
+  <h2>Registro de usuario</h2>
+
+  <form action="/registro" method="POST" novalidate class="registro-form">
+    <fieldset>
+      <legend>Datos del usuario</legend>
+
+      <div class="registro-grid">
+        <div class="rg-group">
+          <label for="run">RUN</label>
+          <input
+            type="text"
+            id="run"
+            name="run"
+            placeholder="12.345.678-9"
+            autocomplete="off"
+            required
+            aria-describedby="ayuda-run"
+            pattern="^(\d{1,2}\.?\d{3}\.?\d{3}-[\dkK])$"
+          >
+        </div>
+
+        <div class="rg-group">
+          <label for="nombres">Nombres</label>
+          <input
+            type="text"
+            id="nombres"
+            name="nombres"
+            required
+            placeholder="Tu nombre"
+            autocomplete="given-name"
+          >
+        </div>
+
+        <div class="rg-group">
+          <label for="appaterno">Apellido paterno</label>
+          <input
+            type="text"
+            id="appaterno"
+            name="appaterno"
+            required
+            placeholder="Apellido paterno"
+            autocomplete="family-name"
+          >
+        </div>
+
+        <div class="rg-group">
+          <label for="amaterno">Apellido materno</label>
+          <input
+            type="text"
+            id="amaterno"
+            name="amaterno"
+            placeholder="Apellido materno"
+            autocomplete="additional-name"
+          >
+        </div>
+
+        <div class="rg-group">
+          <label for="correo">Correo electrónico</label>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            required
+            placeholder="ejemplo@email.com"
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="rg-group">
+          <label for="fnacimiento">Fecha de nacimiento</label>
+          <input
+            type="date"
+            id="fnacimiento"
+            name="fnacimiento"
+            autocomplete="bday"
+          >
+        </div>
+
+        <div class="rg-group">
+          <label for="telefono">Teléfono</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="+56 9 1234 5678"
+            autocomplete="tel"
+          >
+        </div>
+
+        <div class="rg-group --full">
+          <label for="direccion">Dirección</label>
+          <input
+            type="text"
+            id="direccion"
+            name="direccion"
+            placeholder="Calle, número, depto."
+            autocomplete="street-address"
+          >
+        </div>
+
+        <div class="rg-group">
+          <label for="region">Región</label>
+          <input
+            type="text"
+            id="region"
+            name="region"
+            placeholder="Selecciona o escribe"
+            list="regiones"
+            autocomplete="address-level1"
+          >
+          <datalist id="regiones">
             <option value="Arica y Parinacota"></option>
             <option value="Tarapacá"></option>
             <option value="Antofagasta"></option>
@@ -64,12 +168,20 @@
             <option value="Los Lagos"></option>
             <option value="Aysén del General Carlos Ibáñez del Campo"></option>
             <option value="Magallanes y de la Antártica Chilena"></option>
-        </datalist>
-        <br>
-        <label for="comuna">Comuna </label>
-        <br>
-        <input type="list" list="comunas">
-        <datalist id="comunas">
+          </datalist>
+        </div>
+
+        <div class="rg-group">
+          <label for="comuna">Comuna</label>
+          <input
+            type="text"
+            id="comuna"
+            name="comuna"
+            placeholder="Selecciona o escribe"
+            list="comunas"
+            autocomplete="address-level2"
+          >
+          <datalist id="comunas">
             <option value="Aisén"></option>
             <option value="Algarrobo"></option>
             <option value="Alhué"></option>
@@ -413,20 +525,79 @@
             <option value="Yumbel"></option>
             <option value="Yungay"></option>
             <option value="Zapallar"></option>
-        </datalist>
-        <br>
-        <label for="contraseña">Contraseña </label>
-        <br>
-        <input type="password" id="contraseña">
-        <br>
-        <label for="confirmar">Confirmar contraseña</label>
-        <br>
-        <input type="password" id="confirmar">
-        <br>
-        <br>
-        <button>Enviar</button>
+          </datalist>
+        </div>
 
-    </form>
+        <div class="rg-group">
+          <label for="contrasena">Contraseña</label>
+          <input
+            type="password"
+            id="contrasena"
+            name="contrasena"
+            required
+            placeholder="********"
+            autocomplete="new-password"
+            minlength="6"
+          >
+        </div>
+
+        <div class="rg-group">
+          <label for="confirmar">Confirmar contraseña</label>
+          <input
+            type="password"
+            id="confirmar"
+            name="confirmar"
+            required
+            placeholder="********"
+            autocomplete="new-password"
+            minlength="6"
+            aria-describedby="ayuda-confirmar"
+          >
+
+        </div>
+
+        <div class="rg-actions --full">
+          <button type="submit" class="rg-btn rg-btn--primary">Enviar</button>
+        </div>
+      </div> 
+
+    </fieldset>
+  </form>
+</main>
+
+
+    <footer>
+    <div class="container footer-content">
+        <div class="footer-info">
+            <h3>Pastelería Mr. Pastel</h3>
+            <p>Av. Dulce 123, Santiago, Chile</p>
+            <p>Tel: +56 9 1234 5678</p>
+            <p>Email: contacto@mrpastel.cl</p>
+        </div>
+        <div class="footer-links">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="/PasteleriaMilSabores/index.html">Home</a></li>
+                <li><a href="/PasteleriaMilSabores/pages/tienda/productos.html">Productos</a></li>
+                <li><a href="/PasteleriaMilSabores/pages/tienda/nosotros.html">Nosotros</a></li>
+                <li><a href="/PasteleriaMilSabores/pages/tienda/blog1.html">Blogs</a></li>
+                <li><a href="/PasteleriaMilSabores/pages/tienda/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Síguenos</h4>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Pastelería Mr. Pastel. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+
 
 </body>
 </html>
