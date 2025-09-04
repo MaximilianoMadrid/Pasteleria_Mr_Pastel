@@ -320,6 +320,162 @@ footer {
         align-items: center;
     }
 }
+/* === ESTILOS ESPECÍFICOS PARA PRODUCTOS === */
+/* Estilos de la sección principal del catálogo */
+#Catalogo {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#Catalogo h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #d94f4f; /* Mismo color que los títulos de la página de inicio */
+}
+
+/* Estilos de la sección de filtros */
+#filtros {
+    background-color: #fff0eb; /* Un color de fondo suave que complementa el tema */
+    padding: 20px 0;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#filtros h2 {
+    font-size: 1.5rem;
+    color: #8b4513; /* Un color marrón chocolate para dar un toque de pastelería */
+    margin: 0;
+}
+
+#filtros form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#filtros label {
+    font-weight: 500;
+    color: #555;
+}
+
+#filtros select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+#filtros select:hover,
+#filtros select:focus {
+    border-color: #d94f4f; /* Color de acento al interactuar */
+    outline: none;
+}
+
+/* Estilo para la galería de productos */
+/* Tomamos el mismo estilo que .grid-productos de la página de inicio */
+.galleta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* Estilo para cada artículo de producto */
+.producto {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.producto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.producto p {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #d94f4f;
+    font-size: 1.1rem;
+}
+
+/* Estilo para los enlaces y botones de cada producto */
+.producto a {
+    display: inline-block;
+    background-color: #fff;
+    color: #d94f4f;
+    border: 1px solid #d94f4f;
+    padding: 8px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.producto a:hover {
+    background-color: #d94f4f;
+    color: #fff;
+}
+
+.producto button {
+    background-color: #d94f4f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.producto button:hover {
+    background-color: #b83e3e;
+}
+
+/* Estilos responsivos para la sección de productos */
+@media (max-width: 768px) {
+    #filtros {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #filtros form {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+}
 
 /* === ESTILOS PARA NOSOTROS.HTML === */
 
