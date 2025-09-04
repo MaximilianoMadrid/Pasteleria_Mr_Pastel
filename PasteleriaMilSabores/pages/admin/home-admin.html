@@ -15,10 +15,10 @@
 
 
 <body>
-  <!-- Enlace de salto para accesibilidad -->
+  <!-- Todavía no cacho bien por qué pero entiendo que este enlace de salto es útil para personas que navegan con dispositivos con teconología asistida para discapacidades -->
   <a href="#contenido-principal" class="salto-contenido">Saltar al contenido</a>
 
-  <!-- Encabezado corporativo -->
+
   <header role="banner" aria-label="Encabezado principal" class="admin-header">
     <div class="admin-header__wrap">
       <div class="marca">
@@ -28,7 +28,6 @@
         </a>
       </div>
 
-      <!-- Acciones de usuario -->
       <nav class="header-acciones" aria-label="Acciones de usuario">
         <ul>
           <li><a href="./perfil.html">Mi perfil</a></li>
@@ -37,20 +36,22 @@
         </ul>
       </nav>
 
-      <!-- Botón para mostrar/ocultar menú lateral en móvil (JS después) -->
+      <!-- Este botón debiera tener, después, lógica de JS para ocultar y mostrar el panel lateral, hay que averiguar cómo -->
       <button class="btn-menu" type="button" aria-controls="menu-lateral" aria-expanded="false" aria-label="Mostrar u ocultar menú lateral">
         ☰
       </button>
     </div>
   </header>
 
+
+
+
   <div class="admin-layout">
-    <!-- Menú lateral (izquierdo) -->
     <aside id="menu-lateral" class="menu-lateral" role="navigation" aria-label="Menú lateral del administrador">
       <div class="menu-lateral__seccion">
         <p class="menu-lateral__titulo">Navegación</p>
         <ul class="menu-lateral__lista">
-          <li><a href="./index.html" aria-current="page">🏠 Inicio</a></li>
+          <li><a href="./home-admin.html" aria-current="page">🏠 Inicio</a></li>
           <li><a href="./usuarios.html">👤 Usuarios</a></li>
           <li><a href="./nuevo-usuario.html">➕ Nuevo Usuario</a></li>
           <li><a href="./productos.html">🧁 Productos</a></li>
@@ -69,18 +70,18 @@
       </div>
     </aside>
 
-    <!-- Contenido principal (solo el saludo) -->
     <main id="contenido-principal" class="admin-contenido" role="main" aria-labelledby="bienvenida-titulo">
       <section class="bloque">
         <header class="bloque__header">
-          <h1 id="bienvenida-titulo">Bienvenido/a al Panel de Administración</h1>
+          <h1 id="bienvenida-titulo">Bienvenido Mr. Pastel</h1>
         </header>
-        <!-- Zona central vacía a propósito; aquí no mostramos tarjetas ni tablas -->
       </section>
     </main>
   </div>
 
-  <!-- Pie de página corporativo (sin cambios) -->
+
+
+
   <footer role="contentinfo" aria-label="Información del sitio" class="admin-footer">
     <div class="admin-footer__wrap">
       <section aria-label="Información de contacto">

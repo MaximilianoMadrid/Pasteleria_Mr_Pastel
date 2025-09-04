@@ -1,40 +1,39 @@
-/* ===========================
-   TOKENS (ADMIN)
-   =========================== */
+/* Una nota importante que agregar es que este segmento de estilo lo definí de forma global para el home de administardor, nuevo-usuario y listado de usuarios
+===================================
+            TOKENS (ADMIN)
+   =================================== */
 :root{
-  /* Paleta */
-  --adm-bg: #FFF5E1;       /* crema (fondo principal) */
-  --adm-rosa: #FFC0CB;     /* acento 1 */
-  --adm-choco: #8B4513;    /* acento 2 / títulos / foco */
-  --adm-text: #5D4037;     /* texto principal */
-  --adm-text-sec: #B0BEC5; /* texto secundario */
-  --adm-surface: #ffffff;  /* tarjetas, fieldsets */
-  --adm-border: #eadbc4;   /* bordes suaves */
+  /* Tokens de paleta de colores */
+  --adm-bg: #FFF5E1;      
+  --adm-rosa: #FFC0CB;   
+  --adm-choco: #8B4513;   
+  --adm-text: #5D4037;    
+  --adm-text-sec: #B0BEC5; 
+  --adm-surface: #ffffff;  
+  --adm-border: #eadbc4;  
 
-  /* Tipografías (asegúrate de cargar Lato + Pacifico en el <head>) */
+  /* Estos son para las tipografías  */
   --adm-ff-base: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --adm-ff-title: "Pacifico", cursive;
 
-  /* Dimensiones */
+  /* Estos son para las dimensiones */
   --adm-radius: 12px;
   --adm-gap: 16px;
   --adm-gap-lg: 24px;
 
-  /* Sombra */
+  /* Este es para lasombra */
   --adm-shadow: 0 4px 14px rgba(0,0,0,.06);
 
-  /* Anchos */
+  /* Este define el ancho del sidebar */
   --adm-sidebar-w: 260px;
 }
 
-/* Utilidad: oculto solo visualmente, accesible para lectores de pantalla */
 .sr-only{
   position:absolute !important; width:1px !important; height:1px !important;
   padding:0 !important; margin:-1px !important; overflow:hidden !important;
   clip:rect(0,0,0,0) !important; white-space:nowrap !important; border:0 !important;
 }
 
-/* Enlace "Saltar al contenido" */
 .salto-contenido{
   position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
 }
@@ -85,7 +84,7 @@ html, body{
 
 /* Buscador */
 .buscador-global{
-  display: none; /* visible en >= 992px */
+  display: none;
 }
 .buscador-global input{
   padding: 10px 12px; border:1px solid var(--adm-border); border-radius: 10px;
@@ -96,7 +95,6 @@ html, body{
   background: var(--adm-rosa); color: var(--adm-text);
 }
 
-/* Acciones de usuario */
 .header-acciones ul{
   list-style: none; display: flex; gap: 12px; padding: 0; margin: 0;
 }
@@ -106,7 +104,6 @@ html, body{
 }
 .header-acciones a:hover{ background: color-mix(in srgb, var(--adm-rosa) 40%, #fff); }
 
-/* Botón menú (móvil) */
 .btn-menu{
   justify-self: end;
   appearance: none; border:0; cursor:pointer;
@@ -125,7 +122,7 @@ html, body{
 
 /* Sidebar (móvil oculto, desktop visible) */
 .menu-lateral{
-  display: none; /* lo abrirás con JS en móvil añadiendo .is-open al body o al aside */
+  display: none; /* La idea es que esto lo abramos con JS, entiendo que hay que agregar una tributo .isopen al body o aside */
   background: var(--adm-surface);
   border-right: 1px solid var(--adm-border);
   padding: 16px;
@@ -146,12 +143,10 @@ html, body{
   background: color-mix(in srgb, var(--adm-rosa) 40%, #fff);
 }
 
-/* Contenido principal */
 .admin-contenido{
   padding: 20px min(4vw, 24px) 40px;
 }
 
-/* Bloques/secciones */
 .bloque{ margin-bottom: 28px; }
 .bloque__header{ margin-bottom: 8px; }
 .bloque__descripcion{ color: var(--adm-text-sec); margin: 4px 0 0; }
@@ -162,20 +157,18 @@ h1, h2, h3{
   margin: 0 0 6px;
 }
 
-/* Acciones rápidas */
 .acciones-rapidas__lista{
   list-style: none; display: grid; gap: 10px; padding: 0; margin: 12px 0 0;
-  grid-template-columns: 1fr 1fr; /* en móvil dos por fila si hay ancho */
+  grid-template-columns: 1fr 1fr; 
 }
 .accion{
   display: block; text-decoration: none; text-align: center;
   padding: 12px; border-radius: 10px; background: var(--adm-rosa); color: var(--adm-text);
 }
 
-/* Tarjetas resumen */
 .tarjetas{
   display: grid; gap: 16px;
-  grid-template-columns: 1fr; /* móvil */
+  grid-template-columns: 1fr; 
 }
 .tarjeta{
   background: var(--adm-surface); border:1px solid var(--adm-border);
@@ -188,7 +181,6 @@ h1, h2, h3{
 .tarjeta__footer a{ color: var(--adm-choco); text-decoration: none; font-weight: 700; }
 .tarjeta__footer a:hover{ text-decoration: underline; }
 
-/* Tablas */
 .tabla-envuelta{ overflow:auto; border: 1px solid var(--adm-border); border-radius: 10px; background:#fff; }
 .tabla{ width: 100%; border-collapse: collapse; min-width: 640px; }
 .tabla th, .tabla td{ padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--adm-border); }
@@ -226,9 +218,9 @@ h1, h2, h3{
 @media (min-width: 992px){
   .buscador-global{ display: flex; align-items: center; }
   .admin-layout{
-    grid-template-columns: var(--adm-sidebar-w) 1fr; /* sidebar + contenido */
+    grid-template-columns: var(--adm-sidebar-w) 1fr; 
   }
-  .menu-lateral{ display: block; min-height: calc(100dvh - 70px); } /* visible en desktop */
+  .menu-lateral{ display: block; min-height: calc(100dvh - 70px); } 
   .admin-contenido{ padding: 24px 24px 48px; }
   .tarjetas{ grid-template-columns: repeat(4, 1fr); }
 }
@@ -236,7 +228,7 @@ h1, h2, h3{
 /* ===========================
    ESTADO "MENÚ ABIERTO" EN MÓVIL (JS)
    =========================== */
-/* Cuando implementes JS, al abrir el menú añade p.ej. .menu-open al body */
+/* Cuando implementemos JS, al abrir el menú hay que añadir p.ej. .menu-open al body */
 @media (max-width: 991px){
   body.menu-open .menu-lateral{
     display: block;
@@ -245,5 +237,124 @@ h1, h2, h3{
   }
   body.menu-open .admin-contenido{
     filter: blur(.5px);
+  }
+}
+
+
+
+/* ===========================
+   NUEVO USUARIO — FORM CARD
+   Esto permite que el formulario de nuevo usuario tenga el aspecto de una tarjeta, en lugar de estar los campos apilados uno sobre otro
+   =========================== */
+
+/* Contenedor del panel de formulario (marco + fondo dentro de admin-contenido) */
+.form-card{
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border);
+  border-radius: var(--adm-radius);
+  box-shadow: var(--adm-shadow);
+  padding: 18px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.form-card__title{
+  background: color-mix(in srgb, #c7c7c7 70%, #fff);
+  color: var(--adm-text);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+}
+
+.texto-ayuda{
+  color: var(--adm-text-sec);
+  font-size: .92rem;
+}
+
+.form-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--adm-gap);
+}
+
+.campo{
+  display: grid;
+  gap: 6px;
+}
+
+.campo-doble{
+  display: grid;
+  gap: var(--adm-gap);
+}
+.campo-doble .input-group{
+  display: grid;
+  gap: 6px;
+}
+
+:where(.form-grid) :where(input[type="text"],
+                         input[type="email"],
+                         input[type="password"],
+                         input[type="tel"],
+                         input[type="date"],
+                         input[type="number"],
+                         input[type="search"],
+                         select,
+                         textarea){
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--adm-border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--adm-text);
+  line-height: 1.4;
+}
+:where(.form-grid) textarea{ min-height: 96px; resize: vertical; }
+
+:where(.form-grid) :where(input,select,textarea):focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--adm-choco) 30%, transparent);
+  outline-offset: 2px;
+}
+
+.form-acciones{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+.btn{
+  appearance: none; border: 1px solid var(--adm-border);
+  background: #fff; color: var(--adm-text);
+  padding: 10px 16px; border-radius: 10px; cursor: pointer;
+}
+.btn-primario{
+  border: 0;
+  background: var(--adm-choco); 
+  color: #fff; font-weight: 700;
+}
+.btn:hover{ filter: brightness(0.98); }
+.btn-primario:hover{ filter: brightness(0.95); }
+
+/* Título principal (h1) coherente con el sistema */
+.admin-nuevo-usuario #titulo-pagina{
+  font-family: var(--adm-ff-title);
+  color: var(--adm-choco);
+  font-size: clamp(22px, 3vw, 28px);
+  margin: 0;
+}
+
+/* ===========================
+          R ESPONSIVE
+   =========================== */
+@media (min-width: 640px){
+  .form-card{ padding: 22px; }
+  .campo-doble{ grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 992px){
+  /* Asegura espacio visual alrededor, similar al mock */
+  .admin-nuevo-usuario .admin-contenido{
+    padding-top: 24px;
+    padding-bottom: 32px;
   }
 }
