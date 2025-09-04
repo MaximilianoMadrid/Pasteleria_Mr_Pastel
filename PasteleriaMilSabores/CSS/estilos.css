@@ -147,8 +147,7 @@ header {
 }
 .hero-image {
     flex-basis: 40%;
-    /* You can also use flex-grow and flex-shrink */
-    flex: 1 1 400px;
+    flex: 1 1 200px;
     width: 100%;
     max-width: 100%;
     height: auto;
