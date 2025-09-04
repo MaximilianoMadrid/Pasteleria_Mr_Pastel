@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del Producto - Pastelería Mil Sabores</title>
-    <link rel="stylesheet" href="../../static/css/estilos.css">
-    <link rel="stylesheet" href="../../static/css/tienda.css">
+    <link rel="stylesheet" href="../../CSS/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
 </head>
 
 <body>
@@ -23,7 +24,7 @@
     <main>
         <section id="detalle-producto">
             <div class = "producto-imagen">
-                <img src="../../static/img/torta1.jpg" alt="Torta Cuadrada de Chocolate">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/tarta-chocolate-ganache.jpg" height="300" alt="Torta Cuadrada de Chocolate">
             </div>
 
             <div class = "producto-info">
@@ -52,10 +53,11 @@
         </aside>
     </main>
 
+    
     <main>
         <section id="detalle-producto">
             <div class = "producto-imagen">
-                <img src="../../static/img/torta2.jpg" alt="Torta Cuadrada de Frutas">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/torta-de-frutas.jpg" height="300" alt="Torta Cuadrada de Frutas">
             </div>
 
             <div class = "producto-info">
@@ -84,8 +86,408 @@
         </aside>
     </main>
 
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/torta de vainilla.jpg" height="300" alt="Torta Circular de Vainilla">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Torta Circular de Vainilla</h2>
+                <p>Bizcocho de vainilla clásico relleno con crema pastelera y cubierto
+                   con un glaseado dulce, perfecto para cualquier ocasión.</p>
+                <p class="precio">$40.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <label for=tamaño>Tamaño:</label>
+                <select id="tamaño" name="tamaño">
+                    <option value="pequeña">Pequeña (4 porciones)</option>
+                    <option value="mediana">Mediana (8 porciones)</option>
+                    <option value="grande">Grande (12 porciones)</option>
+                </select><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/torta-manjar-nuez.jpg" height="300" alt="Torta circular de manjar">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Torta circular de manjar</h2>
+                <p>Torta tradicional chilena con manjar y nueces, un deleite para los
+                   amantes de los sabores dulces y clásicos.</p>
+                <p class="precio">$42.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <label for=tamaño>Tamaño:</label>
+                <select id="tamaño" name="tamaño">
+                    <option value="pequeña">Pequeña (4 porciones)</option>
+                    <option value="mediana">Mediana (8 porciones)</option>
+                    <option value="grande">Grande (12 porciones)</option>
+                </select><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/mousse-chocolate.jpg" height="300" alt="Postre Individual Mousse de Chocolate">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Mousse de Chocolate</h2>
+                <p>Postre individual cremoso y suave, hecho con chocolate de alta
+                   calidad, ideal para los amantes del chocolate.</p>
+                <p class="precio">$5.000 CLP</p>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/tiramisu.jpg" height="300" alt="Postre Individual Tiramisú Clasico ">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Tiramisú Clasico </h2>
+                <p>Un postre italiano individual con capas de café, mascarpone y cacao,
+                   perfecto para finalizar cualquier comida.</p>
+                <p class="precio">$5.500 CLP</p>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/torta-naranja.jpg" height="300" alt="Torta Sin Azúcar de Naranja">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Torta Sin Azúcar de Naranja</h2>
+                <p>Torta ligera y deliciosa, endulzada naturalmente, ideal para
+                   quienes buscan opciones más saludables.</p>
+                <p class="precio">$48.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <label for=tamaño>Tamaño:</label>
+                <select id="tamaño" name="tamaño">
+                    <option value="pequeña">Pequeña (4 porciones)</option>
+                    <option value="mediana">Mediana (8 porciones)</option>
+                    <option value="grande">Grande (12 porciones)</option>
+                </select><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/chesecake.jpg" height="300" alt="Postre Cheesecake Sin Azucar">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Postre Cheesecake Sin Azucar</h2>
+                <p>Suave y cremoso, este cheesecake es una opción perfecta para
+                   disfrutar sin culpa.</p>
+                <p class="precio">$48.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <label for=tamaño>Tamaño:</label>
+                <select id="tamaño" name="tamaño">
+                    <option value="pequeña">Pequeña (4 porciones)</option>
+                    <option value="mediana">Mediana (8 porciones)</option>
+                    <option value="grande">Grande (12 porciones)</option>
+                </select><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/empanadas-manzana.jpg" height="300" alt="Empanada de Manzana">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Empanada de Manzana</h2>
+                <p>Pastelería tradicional rellena de manzanas especiadas, perfecta
+                   para un dulce desayuno o merienda.</p>
+                <p class="precio">$3.000 CLP</p>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/tarta-santiago.jpg" height="300" alt="Tarta de Santiago">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Tarta de Santiago</h2>
+                <p>Tradicional tarta española hecha con almendras, azúcar, y huevos, una
+                   delicia para los amantes de los postres clásicos.</p>
+                <p class="precio">$6.000 CLP</p>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/brownie-sin-gluten.jpg" height="300" alt="Brownie Sin Gluten">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Brownie Sin Gluten</h2>
+                <p>Rico y denso, este brownie es perfecto para quienes necesitan evitar
+                   el gluten sin sacrificar el sabor.</p>
+                <p class="precio">$4.000 CLP</p>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/pan-sin-gluten.jpg" height="300" alt="Pan Sin Gluten">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Pan Sin Gluten</h2>
+                <p>Suave y esponjoso, ideal para sándwiches o para acompañar cualquier
+                comida.</p>
+                <p class="precio">$3.500 CLP</p>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/chocolate-vegano.jpg" height="300" alt="Torta Vegana de Chocolate">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Torta Vegana de Chocolate</h2>
+                <p>Torta de chocolate húmeda y deliciosa, hecha sin productos de
+                   origen animal, perfecta para veganos.</p>
+                <p class="precio">$50.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <label for=tamaño>Tamaño:</label>
+                <select id="tamaño" name="tamaño">
+                    <option value="pequeña">Pequeña (4 porciones)</option>
+                    <option value="mediana">Mediana (8 porciones)</option>
+                    <option value="grande">Grande (12 porciones)</option>
+                </select><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/galletas-avena.jpg" height="300" alt="Galletas Veganas de Avena">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Galletas Veganas de Avena</h2>
+                <p>Crujientes y sabrosas, estas galletas son una excelente opción
+                   para un snack saludable y vegano.</p>
+                <p class="precio">$50.000 CLP</p>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/pastel-cumpleanos.jpg" height="300" alt="Torta Especial de Cumpleaños">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Torta Especial de Cumpleaños</h2>
+                <p>Diseñada especialmente para celebraciones, personalizable
+                   con decoraciones y mensajes únicos.</p>
+                <p class="precio">$50.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
+    <main>
+        <section id="detalle-producto">
+            <div class = "producto-imagen">
+                <img src="/PasteleriaMilSabores/images/imagenes_producto/pastel-boda.jpg" height="300" alt="Torta Especial de Boda">
+            </div>
+
+            <div class = "producto-info">
+                <h2>Torta Especial de Boda</h2>
+                <p>Elegante y deliciosa, esta torta está diseñada para ser el centro de
+                   atención en cualquier boda.</p>
+                <p class="precio">$60.000 CLP</p>
+                <label for="mensaje"> Mensaje en la torta:</label><br>
+                <input type="text" id="mensaje" name="mensaje" placeholder="Ej: ¡Feliz cumpleaños!"><br><br>
+
+                <button id ="añadir-carrito">Añadir al Carrito</button>
+            </div>
+        </section>
+
+        <aside id="Carrito">
+            <h3>🛒 Carrito de Compras</h3>
+            <ul id ="lista-carrito"></ul>
+            <p id="total">Total: $0.00 CLP</p>
+        </aside>
+    </main>
+
     <footer>
-        <p>&copy; 2024 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Pastelería 1000 Sabores</h3>
+                <p>Av. Dulce 123, Santiago, Chile</p>
+                <p>Tel: +56 9 1234 5678</p>
+                <p>Email: contacto@1000sabores.cl</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="/PasteleriaMilSabores/index.html">Home</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/productos.html">Productos</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/nosotros.html">Nosotros</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/blog1.html">Blogs</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pastelería 1000 Sabores. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <!--script src="../../static/js/carrito.js"></script-->

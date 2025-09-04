@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo de Productos - Pastelería Mil Sabores</title>
-    <link rel="stylesheet" href="../../static/css/estilos.css">
-    <link rel="stylesheet" href="../../static/css/tienda.css">
+       
+    <link rel="stylesheet" href="../../CSS/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Catálogo de Productos</h1>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../nosotros.html">Nosotros</a></li>
-                <li><a href="blog.html">Productos</a></li>
-                <li><a href="../contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+   <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/PasteleriaMilSabores/images/logo1.png" alt="Pastelería 1000 Sabores" >
+                <h1>1000 Sabores</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/PasteleriaMilSabores/index.html" >Home</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/productos.html" class="active">Productos</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/nosotros.html" >Nosotros</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/blog.html">Blogs</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="carrito.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="/PasteleriaMilSabores/pages/tienda/login.html" class="login-link">Login</a>
+                <a href="/PasteleriaMilSabores/pages/tienda/registro.html" class="login-link">Registro</a>
+            </div>
+        </div>
     </header>
-
         <section id="filtros">
             <h2>Filtrar por Categoría</h2>
            <form>
@@ -52,7 +66,7 @@
             <div class="galleta">  
 
                 <article class="producto">
-                    <img src="../../static/img/torta1.jpg" alt="Torta Cuadrada de Chocolate">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/tarta-chocolate-ganache.jpg" alt="Torta Cuadrada de Chocolate"> 
                     <h3>Torta Cuadrada de Chocolate</h3>
                     <p>$45.000 CLP</p>
                     <a href="producto_detalle.html">Ver Detalles</a>
@@ -60,7 +74,7 @@
                 </article>
 
                 <article class ="producto">
-                    <img src="../../images/torta-frutas.jpg" alt="Torta Cuadrada de Frutas">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/torta-de-frutas.jpg" alt="Torta Cuadrada de Frutas">
                     <h3>Torta Cuadrada de Frutas</h3>
                     <p>$50.000 CLP</p>
                     <a href="producto-detalle.html">Ver detalle</a>
@@ -68,7 +82,7 @@
                 </article>
 
                 <article class="producto">
-                    <img src="../../static/img/torta-circular.jpg" alt="Torta Circular de Vainilla">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/torta de vainilla.jpg" alt="Torta Circular de Vainilla">
                     <h3>Torta Circular de Vainilla</h3>
                     <p>$40.000 CLP</p>
                     <a href="producto_detalle.html">Ver Detalles</a>
@@ -76,7 +90,7 @@
                 </article>
 
                 <article class ="producto">
-                    <img src="../../static/img/torta-circular2.jpg" alt="Torta circular de manjar">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/torta-manjar-nuez.jpg" alt="Torta circular de manjar">
                     <h3>Torta Circular de Manjar</h3>
                     <p>$42.000 CLP</p>
                     <a href="producto-detalle.html">Ver detalle</a>
@@ -84,23 +98,23 @@
                 </article>
 
                 <article class="producto">
-                    <img src="../../static/img/postre-individual.jpg" alt="Postre Individual Mousse de Chocolate">
-                    <h3>Postre Individual Mousse de Chocolate</h3>
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/mousse-chocolate.jpg" alt="Postre Individual Mousse de Chocolate">
+                    <h3>Mousse de Chocolate</h3>
                     <p>$5.000 CLP</p>
                     <a href="producto_detalle.html">Ver Detalles</a>
                     <button>Añadir al Carrito</button>
                 </article>
 
                 <article class ="producto">
-                    <img src="../../static/img/postre-individual2.jpg" alt="Postre Individual Tiramisú Clasico ">
-                    <h3>Postre Individual Tiramisú Clasico</h3>
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/tiramisu.jpg" alt="Postre Individual Tiramisú Clasico ">
+                    <h3>Tiramisú Clasico</h3>
                     <p>$6.000 CLP</p>
                     <a href="producto-detalle.html">Ver detalle</a>
                     <button>Añadir al Carrito</button>
                 </article>
 
                 <article class="producto">
-                    <img src="../../static/img/sin-azucar.jpg" alt="Torta Sin Azúcar de Naranja">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/torta-naranja.jpg" alt="Torta Sin Azúcar de Naranja">
                     <h3>Torta Sin Azúcar de Naranja</h3>
                     <p>$48.000 CLP</p>
                     <a href="producto_detalle.html">Ver Detalles</a>
@@ -108,7 +122,7 @@
                 </article>
 
                 <article class ="producto">
-                    <img src="../../static/img/sin-azucar2.jpg" alt="Postre Cheesecake Sin Azucar">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/chesecake.jpg" alt="Postre Cheesecake Sin Azucar">
                     <h3>Postre Cheesecake Sin Azucar</h3>
                     <p>$48.000 CLP</p>
                     <a href="producto-detalle.html">Ver detalle</a>
@@ -116,7 +130,7 @@
                 </article>
 
                 <article class="producto">
-                    <img src="../../static/img/pasteleria-tradicional.jpg" alt="Empanada de manzana">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/empanadas-manzana.jpg" alt="Empanada de manzana">
                     <h3>Empanada de Manzana</h3>
                     <p>$3.000 CLP</p>
                     <a href="producto_detalle.html">Ver Detalles</a>
@@ -124,7 +138,7 @@
                 </article>
 
                 <article class ="producto">
-                    <img src="../../static/img/pasteleria-tradicional2.jpg" alt="Tarta de Santiago">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/tarta-santiago.jpg" alt="Tarta de Santiago">
                     <h3>Tarta de Santiago</h3>
                     <p>$6.000 CLP</p>
                     <a href="producto-detalle.html">Ver detalle</a>
@@ -132,7 +146,7 @@
                 </article>
 
                 <article class="producto">
-                    <img src="../../static/img/sin-gluten.jpg" alt="Brownie Sin Gluten">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/brownie-sin-gluten.jpg" alt="Brownie Sin Gluten">
                     <h3>Brownie Sin Gluten</h3>
                     <p>$4.000 CLP</p>
                     <a href="producto_detalle.html">Ver Detalles</a>
@@ -140,7 +154,7 @@
                 </article>
 
                 <article class ="producto">
-                    <img src="../../static/img/sin-gluten2.jpg" alt="Pan Sin Gluten">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/pan-sin-gluten.jpg" alt="Pan Sin Gluten">
                     <h3>Pan Sin Gluten</h3>
                     <p>$3.500 CLP</p>
                     <a href="producto-detalle.html">Ver detalle</a>
@@ -148,7 +162,7 @@
                 </article>
 
                 <article class="producto">
-                    <img src="../../static/img/vegano.jpg" alt="Torta Vegana de Chocolate">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/chocolate-vegano.jpg" alt="Torta Vegana de Chocolate">
                     <h3>Torta Vegana de Chocolate</h3>
                     <p>$50.000 CLP</p>
                     <a href="producto_detalle.html">Ver Detalles</a>
@@ -156,7 +170,7 @@
                 </article>
 
                 <article class ="producto">
-                    <img src="../../static/img/vegano2.jpg" alt="Galletas Veganas de Avena">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/galletas-avena.jpg" alt="Galletas Veganas de Avena">
                     <h3>Galletas Veganas de Avena</h3>
                     <p>$4.500 CLP</p>
                     <a href="producto-detalle.html">Ver detalle</a>
@@ -164,7 +178,7 @@
                 </article>
 
                 <article class="producto">
-                    <img src="../../static/img/torta-especial.jpg" alt="Torta Especial de Cumpleaños">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/pastel-cumpleanos.jpg" alt="Torta Especial de Cumpleaños">
                     <h3>Torta Especial de Cumpleaños</h3>
                     <p>$55.000 CLP</p>
                     <a href="producto_detalle.html">Ver Detalles</a>
@@ -172,7 +186,7 @@
                 </article>
 
                 <article class ="producto">
-                    <img src="../../static/img/torta-especial2.jpg" alt="Torta Especial de Boda">
+                    <img src="/PasteleriaMilSabores/images/imagenes_producto/pastel-boda.jpg" alt="Torta Especial de Boda">
                     <h3>Torta Especial de Boda</h3>
                     <p>$60.000 CLP</p>
                     <a href="producto-detalle.html">Ver detalle</a>
@@ -183,16 +197,39 @@
         </section>
 
         <footer>
-            <p>&copy; 2024 Pastelería Mil Sabores. Todos los derechos reservados.</p>
-            <p>Síguenos en 
-                <a href="#">Facebook</a>, 
-                <a href="#">Instagram</a>, 
-                <a href="#">Twitter</a>
-            </p>
-        </footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Pastelería 1000 Sabores</h3>
+                <p>Av. Dulce 123, Santiago, Chile</p>
+                <p>Tel: +56 9 1234 5678</p>
+                <p>Email: contacto@1000sabores.cl</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="/PasteleriaMilSabores/index.html">Home</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/productos.html">Productos</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/nosotros.html">Nosotros</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/blog1.html">Blogs</a></li>
+                    <li><a href="/PasteleriaMilSabores/pages/tienda/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pastelería 1000 Sabores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
     
         <!--script src="../../static/js/tienda.js"></script>  para conectar con JS-->
 </body>
-   
+
 </html>
 

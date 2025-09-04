@@ -3,213 +3,225 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gestión de Usuarios | Administración</title>
-  <meta name="page-scope" content="admin-usuarios">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../CSS/admin.css">
+  <title>Usuarios | Panel de Administración</title>
 </head>
 
 
-<body>
 
-  <header role="banner" aria-label="Encabezado principal">
-    <nav aria-label="Ruta de navegación" hidden></nav>
+
+
+<body class="admin-usuarios">
+    <!-- Todavía no cacho bien por qué pero entiendo que este enlace de salto es útil para personas que navegan con dispositivos con teconología asistida para discapacidades -->
+  <a href="#contenido-principal" class="salto-contenido">Saltar al contenido</a>
+
+  <header class="admin-header" role="banner" aria-label="Encabezado principal">
+    <div class="admin-header__wrap">
+      <div class="marca">
+        <a href="home-admin.html" class="marca__link" aria-label="Ir al inicio del panel">
+          <img src="/PasteleriaMilSabores/images/logo.png" alt="Logo de Mr. Pastel" class="marca__logo">
+          <span class="marca__nombre">Mr. Pastel</span>
+        </a>
+      </div>
+
+      <nav class="header-acciones" aria-label="Acciones de usuario">
+        <ul>
+          <li><a href="./perfil.html">Mi perfil</a></li>
+          <li><a href="./ajustes.html">Ajustes</a></li>
+          <li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-menu" type="button" aria-controls="menu-lateral" aria-expanded="false" aria-label="Mostrar u ocultar menú lateral">☰</button>
+    </div>
   </header>
 
+  <div class="admin-layout">
+    <aside id="menu-lateral" class="menu-lateral" role="navigation" aria-label="Menú lateral del administrador">
+      <div class="menu-lateral__seccion">
+        <p class="menu-lateral__titulo">Navegación</p>
+        <ul class="menu-lateral__lista">
+          <li><a href="./home-admin.html">🏠 Inicio</a></li>
+          <li><a href="./usuarios.html" aria-current="page">👤 Usuarios</a></li>
+          <li><a href="./nuevo-usuario.html">➕ Nuevo Usuario</a></li>
+          <li><a href="./productos.html">🧁 Productos</a></li>
+          <li><a href="./pedidos.html">🛒 Pedidos</a></li>
+          <li><a href="./reportes.html">📈 Reportes</a></li>
+          <li><a href="./ajustes.html">⚙️ Ajustes</a></li>
+        </ul>
+      </div>
+    </aside>
 
-  <main id="contenido" role="main">
-    <section aria-labelledby="titulo-seccion" class="seccion-usuarios">
-
-      <header class="seccion-encabezado" aria-label="Encabezado de la sección Gestión de Usuarios">
-        <div class="encabezado-izquierda">
-          <h1 id="titulo-seccion">Gestión de Usuarios</h1>
-          <p id="descripcion-seccion">
-            Administra usuarios: crear, buscar, filtrar, ver detalles, editar, eliminar y cambiar estado.
-          </p>
-        </div>
-
-        <div class="encabezado-derecha">
-
-          <form class="buscador" role="search" aria-label="Buscar usuarios por nombre o correo electrónico">
-            <label for="q">Buscar</label>
-            <input
-              type="search"
-              id="q"
-              name="q"
-              placeholder="Nombre o correo electrónico…"
-              autocomplete="off"
-              inputmode="search"
-              aria-describedby="ayuda-busqueda"
-            />
-            <span id="ayuda-busqueda" class="texto-ayuda">
-              Escribe parte del nombre o del correo y presiona “Buscar”.
-            </span>
-            <button type="submit" aria-label="Ejecutar búsqueda">Buscar</button>
-            <button type="reset" aria-label="Limpiar búsqueda">Limpiar</button>
-          </form>
-
-
-          <a href="./nuevo-usuario.html" class="btn btn-primario" id="btn-nuevo-usuario" aria-label="Crear nuevo usuario">
-            Nuevo Usuario
-          </a>
-        </div>
+    <!-- Contenido principal -->
+    <main id="contenido-principal" class="admin-contenido" role="main" aria-labelledby="titulo-pagina">
+      
+      <!-- Barra superior -->
+      <header class="bloque__header" style="display:flex; align-items:center; gap:12px; justify-content:space-between; margin-bottom:12px;">
+        <h1 id="titulo-pagina" style="margin:0;">Usuarios</h1>
+        <a href="./nuevo-usuario.html" class="btn btn-principal" aria-label="Crear nuevo usuario" 
+           style="display:inline-block; text-decoration:none; padding:10px 16px; border-radius:8px; background:#000; color:#fff; font-weight:700;">
+          NUEVO USUARIO
+        </a>
       </header>
 
+      <!-- Controles -->
+      <div class="toolbar" aria-label="Controles de la lista" style="display:flex; gap:12px; align-items:center; justify-content:space-between; margin-bottom:10px;">
+        <div class="toolbar-izq">
+          <label for="f-criterio" class="sr-only">Criterio</label>
+          <select id="f-criterio" name="criterio" aria-label="Criterio de listado">
+            <option value="">Todos los usuarios</option>
+            <option value="activos">Activos</option>
+            <option value="inactivos">Inactivos</option>
+            <option value="administradores">Administradores</option>
+            <option value="vendedores">Vendedores</option>
+            <option value="clientes">Clientes</option>
+          </select>
+        </div>
+      </div>
 
-      <section aria-labelledby="titulo-filtros" class="panel-filtros">
-        <h2 id="titulo-filtros">Filtros</h2>
-        <form id="form-filtros" aria-describedby="ayuda-filtros">
-          <p id="ayuda-filtros" class="texto-ayuda">
-            Ajusta los filtros y selecciona “Aplicar filtros” para actualizar la lista.
-          </p>
-
-
-          <div class="filtro">
-            <label for="f-tipo">Tipo de usuario</label>
-            <select id="f-tipo" name="tipo" aria-label="Filtrar por tipo de usuario">
-              <option value="">Todos</option>
-              <option value="1">Cliente</option>
-              <option value="2">Vendedor</option>
-              <option value="3">Administrador</option>
-            </select>
-          </div>
-
-
-          <div class="filtro">
-            <label for="f-estado">Estado (ID numérico)</label>
-            <select id="f-estado" name="id_estado" aria-label="Filtrar por estado">
-              <option value="">Todos</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-
-
-          <fieldset class="filtro">
-            <legend>Fecha de registro</legend>
-            <div class="filtro-fecha">
-              <label for="f-desde">Desde</label>
-              <input type="date" id="f-desde" name="desde" />
-            </div>
-            <div class="filtro-fecha">
-              <label for="f-hasta">Hasta</label>
-              <input type="date" id="f-hasta" name="hasta" />
-            </div>
-          </fieldset>
-
-          <div class="filtros-acciones">
-            <button type="submit" aria-label="Aplicar filtros">Aplicar filtros</button>
-            <button type="reset" aria-label="Limpiar filtros">Limpiar filtros</button>
-          </div>
-        </form>
+      <!-- Tabla de usuarios -->
+      <section class="tabla-envuelta" role="region" aria-label="Tabla de usuarios">
+        <table class="tabla" aria-describedby="resumen-usuarios">
+          <caption id="resumen-usuarios" class="sr-only">Listado de usuarios del sistema</caption>
+          <thead>
+            <tr>
+              <th>id_usuario</th>
+              <th>run</th>
+              <th>nombres</th>
+              <th>appaterno</th>
+              <th>amaterno</th>
+              <th>email</th>
+              <th>password</th>
+              <th>f_nacim</th>
+              <th>id_t_usuario</th>
+              <th>telefono</th>
+              <th>direccion</th>
+              <th>region</th>
+              <th>comuna</th>
+              <th>id_estado</th>
+              <th>desc_aplicado</th>
+              <th>fecha_registro</th>
+              <th class="col-acciones">acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Usuario 1 -->
+            <tr>
+              <td>1</td>
+              <td>19011022K</td>
+              <td>Ana</td>
+              <td>Pérez</td>
+              <td>Gómez</td>
+              <td>ana@example.com</td>
+              <td>••••••••</td>
+              <td>1990-03-15</td>
+              <td>3</td>
+              <td>+56 9 1234 5678</td>
+              <td>Av. Siempre Viva 742</td>
+              <td>RM</td>
+              <td>Quinta Normal</td>
+              <td>1</td>
+              <td>10% bienvenida</td>
+              <td>2025-08-20</td>
+              <td>
+                <div class="acciones" role="group">
+                  <a href="./usuario-detalle.html?id=1" class="btn-accion">Ver</a>
+                  <a href="./usuario-editar.html?id=1" class="btn-accion">Editar</a>
+                  <button type="button" class="btn-accion">Eliminar</button>
+                  <button type="button" class="btn-accion">Cambiar estado</button>
+                </div>
+              </td>
+            </tr>
+            <!-- Usuario 2 -->
+            <tr>
+              <td>2</td>
+              <td>16555000-2</td>
+              <td>Carlos</td>
+              <td>Soto</td>
+              <td>Rivas</td>
+              <td>carlos@example.com</td>
+              <td>••••••••</td>
+              <td>1985-07-08</td>
+              <td>2</td>
+              <td>+56 9 8765 4321</td>
+              <td>Calle Falsa 123</td>
+              <td>V</td>
+              <td>Valparaíso</td>
+              <td>2</td>
+              <td>Cliente frecuente</td>
+              <td>2025-07-15</td>
+              <td>
+                <div class="acciones" role="group">
+                  <a href="./usuario-detalle.html?id=2" class="btn-accion">Ver</a>
+                  <a href="./usuario-editar.html?id=2" class="btn-accion">Editar</a>
+                  <button type="button" class="btn-accion">Eliminar</button>
+                  <button type="button" class="btn-accion">Cambiar estado</button>
+                </div>
+              </td>
+            </tr>
+            <!-- Usuario 3 -->
+            <tr>
+              <td>3</td>
+              <td>21022033-5</td>
+              <td>María</td>
+              <td>López</td>
+              <td>Arancibia</td>
+              <td>maria@example.com</td>
+              <td>••••••••</td>
+              <td>1995-11-25</td>
+              <td>1</td>
+              <td>+56 9 1122 3344</td>
+              <td>Pje. Las Rosas 55</td>
+              <td>VIII</td>
+              <td>Concepción</td>
+              <td>1</td>
+              <td>Suscripción premium</td>
+              <td>2025-09-01</td>
+              <td>
+                <div class="acciones" role="group">
+                  <a href="./usuario-detalle.html?id=3" class="btn-accion">Ver</a>
+                  <a href="./usuario-editar.html?id=3" class="btn-accion">Editar</a>
+                  <button type="button" class="btn-accion">Eliminar</button>
+                  <button type="button" class="btn-accion">Cambiar estado</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="17">
+                <nav class="paginacion" aria-label="Paginación" style="display:flex; gap:6px; justify-content:center; padding:10px;">
+                  <button type="button" title="Primera página">&laquo;</button>
+                  <button type="button" title="Anterior">&lsaquo;</button>
+                  <button type="button" class="pagina actual" aria-current="page">1</button>
+                  <button type="button" class="pagina">2</button>
+                  <button type="button" class="pagina">3</button>
+                  <button type="button" title="Siguiente">&rsaquo;</button>
+                  <button type="button" title="Última página">&raquo;</button>
+                </nav>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
       </section>
 
+    </main>
+  </div>
 
-      <section aria-labelledby="titulo-tabla-usuarios" class="tabla-contenedor">
-        <h2 id="titulo-tabla-usuarios">Lista de Usuarios</h2>
-
-        <div class="tabla-controles-superior" aria-live="polite" aria-atomic="true">
-          <p id="tabla-resumen" data-rol="tabla-resumen">
-            Mostrando <span data-bind="rango">0–0</span> de <span data-bind="total">0</span> usuarios.
-          </p>
-
-          <div class="tabla-opciones">
-            <label for="tam-pagina">Elementos por página</label>
-            <select id="tam-pagina" name="tam-pagina" aria-label="Seleccionar cantidad de elementos por página">
-              <option value="10" selected>10</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="tabla-responsiva" role="region" aria-label="Tabla de usuarios con desplazamiento horizontal">
-          <table id="tabla-usuarios">
-            <caption class="sr-only">Usuarios del sistema</caption>
-            <thead>
-              <tr>
-                <th scope="col" data-campo="id_usuario">id_usuario</th>
-                <th scope="col" data-campo="run">run</th>
-                <th scope="col" data-campo="nombres">nombres</th>
-                <th scope="col" data-campo="appaterno">appaterno</th>
-                <th scope="col" data-campo="amaterno">amaterno</th>
-                <th scope="col" data-campo="email">email</th>
-                <th scope="col" data-campo="password">password</th>
-                <th scope="col" data-campo="f_nacim">f_nacim</th>
-                <th scope="col" data-campo="id_t_usuario">id_t_usuario</th>
-                <th scope="col" data-campo="telefono">telefono</th>
-                <th scope="col" data-campo="direccion">direccion</th>
-                <th scope="col" data-campo="region">region</th>
-                <th scope="col" data-campo="comuna">comuna</th>
-                <th scope="col" data-campo="id_estado">id_estado</th>
-                <th scope="col" data-campo="desc_aplicado">desc_aplicado</th>
-                <th scope="col" data-campo="fecha_registro">fecha_registro</th>
-                <th scope="col" class="col-acciones">Acciones</th>
-              </tr>
-            </thead>
-
-            <tbody id="usuarios-tbody">
-              <!-- Esta es solo una fila de ejemplo, eliminar al cargar datos reales con Javascript jejeje -->
-              <tr>
-                <td data-label="id_usuario">1</td>
-                <td data-label="run">19011022K</td>
-                <td data-label="nombres">Ana</td>
-                <td data-label="appaterno">Pérez</td>
-                <td data-label="amaterno">Gómez</td>
-                <td data-label="email">ana@example.com</td>
-                <td data-label="password">••••••••</td>
-                <td data-label="f_nacim">1990-03-15</td>
-                <td data-label="id_t_usuario">3</td>
-                <td data-label="telefono">+56 9 1234 5678</td>
-                <td data-label="direccion">Av. Siempre Viva 742</td>
-                <td data-label="region">RM</td>
-                <td data-label="comuna">Quinta Normal</td>
-                <td data-label="id_estado">1</td>
-                <td data-label="desc_aplicado">10% bienvenida</td>
-                <td data-label="fecha_registro">2025-08-20</td>
-                <td data-label="Acciones">
-                  <div class="acciones" role="group" aria-label="Acciones del usuario 1">
-                    <a href="./usuario-detalle.html?id=1" class="btn-accion" data-accion="ver" aria-label="Ver detalles del usuario 1">Ver</a>
-                    <a href="./usuario-editar.html?id=1" class="btn-accion" data-accion="editar" aria-label="Editar usuario 1">Editar</a>
-                    <button type="button" class="btn-accion" data-accion="eliminar" aria-label="Eliminar usuario 1">Eliminar</button>
-                    <button type="button" class="btn-accion" data-accion="cambiar-estado" aria-pressed="true" aria-label="Cambiar estado del usuario 1">
-                      Cambiar estado
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-
-            <tfoot>
-              <tr>
-                <td colspan="17">
-                  <nav class="paginacion" aria-label="Paginación de usuarios">
-                    <button type="button" data-pag="primera" aria-label="Ir a la primera página">&laquo;</button>
-                    <button type="button" data-pag="anterior" aria-label="Ir a la página anterior">&lsaquo;</button>
-
-                    <ul class="paginas" role="list" aria-label="Lista de páginas">
-
-                      <li><button type="button" class="pagina actual" data-pag="1" aria-current="page" aria-label="Página 1, actual">1</button></li>
-                      <li><button type="button" class="pagina" data-pag="2" aria-label="Ir a la página 2">2</button></li>
-                      <li><button type="button" class="pagina" data-pag="3" aria-label="Ir a la página 3">3</button></li>
-                    </ul>
-
-                    <button type="button" data-pag="siguiente" aria-label="Ir a la página siguiente">&rsaquo;</button>
-                    <button type="button" data-pag="ultima" aria-label="Ir a la última página">&raquo;</button>
-                  </nav>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
+  <!-- Footer -->
+  <footer class="admin-footer" role="contentinfo" aria-label="Información del sitio">
+    <div class="admin-footer__wrap">
+      <section aria-label="Contacto">
+        <p><strong>Mr. Pastel</strong> — Panel de Administración</p>
+        <p>Soporte: <a href="mailto:soporte@mrpastel.cl">soporte@mrpastel.cl</a></p>
       </section>
-    </section>
-  </main>
-
-  <footer role="contentinfo" aria-label="Información de pie de página">
-    <small>&copy; Mr. PAstel 2025 — Panel de administración</small>
+      <section aria-label="Legal">
+        <p>&copy; 2025 Mr. Pastel. Todos los derechos reservados.</p>
+      </section>
+    </div>
   </footer>
-
-
 </body>
 </html>

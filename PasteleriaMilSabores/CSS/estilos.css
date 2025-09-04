@@ -572,7 +572,7 @@ footer {
 /* Tarjeta del formulario */
 .registro-form fieldset{
   background: var(--reg-surface);
-  border: 1px solid var(--reg-border);
+  border: 5px solid var(--reg-border);
   border-radius: var(--reg-radius);
   padding: clamp(16px, 3vw, 28px);
   box-shadow: var(--reg-shadow);
@@ -676,3 +676,291 @@ footer {
   /* color: var(--reg-choco); */
 }
 
+
+
+
+/* ===== ESTILOS ESPECÍFICOS LOGIN (scope .login-page) ===== */
+
+/* Tokens locales (mantuve los mismos valores que en registro para que la cosa sea uniforme) */
+:root{
+  --reg-bg: #FFF5E1; 
+  --reg-rosa: #FFC0CB;   
+  --reg-choco: #8B4513;
+  --reg-text: #5D4037;    
+  --reg-text-sec: #B0BEC5; 
+
+  --reg-surface: #FFFFFF;
+  --reg-border: #eadbc4;
+  --reg-shadow: 0 4px 14px rgba(0,0,0,.06);
+  --reg-radius: 12px;
+  --reg-gap: 16px;
+  --reg-gap-lg: 24px;
+}
+
+/* Scope de la página de login */
+.login-page{
+  background: var(--reg-bg);
+  color: var(--reg-text);
+  /* Usa Lato y Pacifico en esta página (si están cargadas en el head) */
+  font-family: "Lato", 'Poppins', sans-serif;
+  padding: 30px 0 50px;
+}
+
+/* Título y subtítulo */
+.login-page > h2{
+  font-family: "Pacifico", cursive;
+  color: var(--reg-choco);
+  font-size: clamp(24px, 3.2vw, 40px);
+  margin: 10px 0 6px;
+}
+.login-page .lp-intro{
+  color: var(--reg-text);
+  margin: 0 0 18px;
+}
+
+/* Tarjeta del formulario */
+.login-form fieldset{
+  background: var(--reg-surface);
+  border: 5px solid var(--reg-border);
+  border-radius: var(--reg-radius);
+  padding: clamp(16px, 3vw, 28px);
+  box-shadow: var(--reg-shadow);
+}
+.login-form legend{
+  color: var(--reg-choco);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Grid */
+.login-grid{
+  display: grid;
+  gap: var(--reg-gap-lg);
+}
+
+/* Grupos */
+.lg-group{
+  display: grid;
+  gap: 6px;
+}
+.lg-group.lg-remember{
+  align-items: center;
+}
+
+/* Inputs */
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="text"],
+.login-form input[type="tel"],
+.login-form input[type="date"],
+.login-form textarea,
+.login-form select{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--reg-text);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .02s ease-in;
+}
+
+/* Focus accesible */
+.login-form :where(input, textarea, select):focus-visible{
+  border-color: var(--reg-choco);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--reg-choco) 28%, transparent);
+}
+
+/* Acciones */
+.lg-actions{
+  display: flex;
+  gap: var(--reg-gap);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Botonera */
+.lg-btn{
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .06s ease, background-color .15s ease, box-shadow .15s ease, color .15s ease;
+}
+.lg-btn--primary{
+  background: var(--reg-rosa);
+  color: var(--reg-text);
+  box-shadow: 0 6px 16px rgba(255, 192, 203, .35);
+}
+.lg-btn--primary:hover{ background: #ffb1be; }
+.lg-btn--primary:active{ transform: translateY(1px); }
+.lg-btn--primary:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--reg-choco) 30%, transparent);
+  outline-offset: 2px;
+}
+
+/* Enlaces secundarios dentro del formulario */
+.lp-link{
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--reg-choco);
+}
+.lp-link:hover{
+  text-decoration: underline;
+}
+
+/* Párrafo que cambia a registro */
+.lp-switch{
+  color: var(--reg-text);
+  margin: 4px 0 0;
+}
+
+/* Utilidades */
+.--full{ grid-column: 1 / -1; }
+
+/* Responsivo: 2 columnas si algún día sumas más campos */
+@media (min-width: 768px){
+  .login-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Tip: dejar acciones y switch a ancho completo */
+  .lg-actions.--full, .lp-switch.--full{
+    grid-column: 1 / -1;
+  }
+}
+
+
+
+
+
+
+
+/* ===== ESTILOS ESPECÍFICOS CONTACTO (scope .contacto-page) ===== */
+
+/* Tokens (literalmente copié y pegué de login y registro para mantener la uniformidad... como ya están definidos más arriba podría haberlo omitido pero el toc me la gana y quiero tenerlo a la vista en cada bloque de css) */
+:root{
+  --reg-bg: #FFF5E1;
+  --reg-rosa: #FFC0CB;
+  --reg-choco: #8B4513;
+  --reg-text: #5D4037;
+  --reg-text-sec: #B0BEC5;
+
+  --reg-surface: #FFFFFF;
+  --reg-border: #eadbc4;
+  --reg-shadow: 0 4px 14px rgba(0,0,0,.06);
+  --reg-radius: 12px;
+  --reg-gap: 16px;
+  --reg-gap-lg: 24px;
+}
+
+/* Scope de la página de contacto */
+.contacto-page{
+  background: var(--reg-bg);
+  color: var(--reg-text);
+  font-family: "Lato", 'Poppins', sans-serif;
+  padding: 30px 0 50px;
+}
+
+/* Título */
+.contacto-page > h2{
+  font-family: "Pacifico", cursive;
+  color: var(--reg-choco);
+  font-size: clamp(24px, 3.2vw, 40px);
+  margin: 10px 0 18px;
+}
+
+/* Formulario como tarjeta */
+.contacto-form fieldset{
+  background: var(--reg-surface);
+  border: 10px solid var(--reg-border);
+  border-radius: var(--reg-radius);
+  padding: clamp(16px, 3vw, 28px);
+  box-shadow: var(--reg-shadow);
+}
+.contacto-form legend{
+  color: var(--reg-choco);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Grid */
+.contacto-grid{
+  display: grid;
+  gap: var(--reg-gap-lg);
+}
+
+/* Grupos y ayudas */
+.cg-group{ display: grid; gap: 6px; }
+.cp-intro{ color: var(--reg-text); margin: 0; }
+.cp-help{ color: var(--reg-text-sec); }
+
+/* Campos */
+.contacto-form input[type="text"],
+.contacto-form input[type="email"],
+.contacto-form input[type="tel"],
+.contacto-form textarea,
+.contacto-form select{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--reg-text);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .02s ease-in;
+}
+.contacto-form textarea{ resize: vertical; min-height: 140px; }
+
+/* Focus accesible */
+.contacto-form :where(input, textarea, select):focus-visible{
+  border-color: var(--reg-choco);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--reg-choco) 28%, transparent);
+}
+
+/* Acciones */
+.cg-actions{
+  display: flex;
+  gap: var(--reg-gap);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Botones */
+.cg-btn{
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .06s ease, background-color .15s ease, box-shadow .15s ease, color .15s ease;
+}
+.cg-btn--primary{
+  background: var(--reg-rosa);
+  color: var(--reg-text);
+  box-shadow: 0 6px 16px rgba(255, 192, 203, .35);
+}
+.cg-btn--primary:hover{ background: #ffb1be; }
+.cg-btn--primary:active{ transform: translateY(1px); }
+.cg-btn--primary:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--reg-choco) 30%, transparent);
+  outline-offset: 2px;
+}
+
+/* Utilidad: ancho completo en desktop */
+.--full{ grid-column: 1 / -1; }
+
+/* Responsivo: 2 columnas si algún día sumas más campos */
+@media (min-width: 768px){
+  .contacto-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  .cg-actions.--full,
+  .cg-group.--full{
+    grid-column: 1 / -1;
+  }
+}
