@@ -3,196 +3,142 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nuevo Usuario | Administración</title>
-  <meta name="page-scope" content="admin-nuevo-usuario">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/PasteleriaMilSabores/CSS/admin.css">
+  <title>Nuevo Usuario | Panel de Administración</title>
 </head>
 
 
-<body>
 
 
-  <header role="banner" aria-label="Encabezado principal">
-    <nav aria-label="Ruta de navegación">
-      <a href="./usuarios.html">Gestión de Usuarios</a> / <span>Nuevo Usuario</span>
-    </nav>
+
+<body class="admin-nuevo-usuario">
+      <!-- Todavía no cacho bien por qué pero entiendo que este enlace de salto es útil para personas que navegan con dispositivos con teconología asistida para discapacidades -->
+  <a href="#contenido-principal" class="salto-contenido">Saltar al contenido</a>
+
+
+
+  <header class="admin-header" role="banner" aria-label="Encabezado principal">
+    <div class="admin-header__wrap">
+      <div class="marca">
+        <a href="./index.html" class="marca__link" aria-label="Ir al inicio del panel">
+          <img src="/PasteleriaMilSabores/images/logo.png" alt="Logo de Mr. Pastel" class="marca__logo">
+          <span class="marca__nombre">Mr. Pastel</span>
+        </a>
+      </div>
+
+      <nav class="header-acciones" aria-label="Acciones de usuario">
+        <ul>
+          <li><a href="./perfil.html">Mi perfil</a></li>
+          <li><a href="./ajustes.html">Ajustes</a></li>
+          <li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-menu" type="button" aria-controls="menu-lateral" aria-expanded="false" aria-label="Mostrar u ocultar menú lateral">☰</button>
+    </div>
   </header>
 
+  <div class="admin-layout">
+    <aside id="menu-lateral" class="menu-lateral" role="navigation" aria-label="Menú lateral del administrador">
+      <div class="menu-lateral__seccion">
+        <p class="menu-lateral__titulo">Navegación</p>
+        <ul class="menu-lateral__lista">
+          <li><a href="./index.html">🏠 Inicio</a></li>
+          <li><a href="./usuarios.html">👤 Usuarios</a></li>
+          <li><a href="./nuevo-usuario.html" aria-current="page">➕ Nuevo Usuario</a></li>
+          <li><a href="./productos.html">🧁 Productos</a></li>
+          <li><a href="./pedidos.html">🛒 Pedidos</a></li>
+          <li><a href="./reportes.html">📈 Reportes</a></li>
+          <li><a href="./ajustes.html">⚙️ Ajustes</a></li>
+        </ul>
+      </div>
+    </aside>
 
-  <main id="contenido" role="main">
-    <section aria-labelledby="titulo-seccion" class="seccion-usuario-nuevo">
-      <header class="seccion-encabezado" aria-label="Encabezado de la sección Nuevo Usuario">
-        <div class="encabezado-izquierda">
-          <h1 id="titulo-seccion">Nuevo Usuario</h1>
-          <p id="descripcion-seccion">
-            Completa el formulario para registrar un nuevo usuario del sistema.
-          </p>
-        </div>
-        <div class="encabezado-derecha">
-          <a href="./usuarios.html" class="btn" aria-label="Volver a la lista de usuarios">Volver a la lista</a>
-        </div>
+    <main id="contenido-principal" class="admin-contenido" role="main" aria-labelledby="titulo-pagina">
+      <header class="bloque__header" style="margin-bottom:12px;">
+        <h1 id="titulo-pagina" style="margin:0;">NUEVO USUARIO</h1>
       </header>
 
-      <section aria-labelledby="titulo-formulario" class="panel-formulario">
-        <h2 id="titulo-formulario">Formulario de registro</h2>
+      <section class="form-card" aria-label="Registro de usuario">
+        <header class="form-card__header" aria-hidden="false">
+          <h2 class="sr-only">Registro de usuario</h2>
+          <div class="form-card__title">Registro de usuario</div>
+        </header>
 
-        <!-- Algunas notitas:
-             - Primero hice la tabla de usuarios del administrador, luego esto. Es por eso que opté por mantener la misma estructura de datos del usuario al registrarlo que lo que se muestra en la tabla de usuarios (además que está alineado con la base de datos que estamos modelando en taller de BD)
-             - id_usuario y fecha_registro entiendo que deberían registrados desde el backend, es por eso que aquí se incluyen
-               como readonly para que sean generados desde el back (no se cómo lo vamos a hacer, pero se que lo haremos XD)
-        -->
-        <form id="form-nuevo-usuario" aria-describedby="ayuda-formulario">
-          <p id="ayuda-formulario" class="texto-ayuda">
+        <form id="form-nuevo-usuario" class="form-grid" aria-describedby="ayuda-form">
+          <p id="ayuda-form" class="texto-ayuda">
             Los campos marcados con <span aria-hidden="true">*</span> son obligatorios.
           </p>
 
-          <!-- Aquí está el id_usuario que debería ser autogenerado -->
-          <fieldset class="grupo-campo">
-            <legend>Identificación</legend>
-            <div class="campo">
-              <label for="id_usuario">id_usuario</label>
-              <input
-                type="number"
-                id="id_usuario"
-                name="id_usuario"
-                inputmode="numeric"
-                min="1"
-                step="1"
-                placeholder="(autogenerado)"
-                aria-describedby="id_usuario_ayuda"
-                readonly
-              />
-            </div>
-          </fieldset>
+          <div class="campo">
+            <label for="id_usuario">id_usuario</label>
+            <input
+              type="number" id="id_usuario" name="id_usuario"
+              inputmode="numeric" min="1" step="1"
+              placeholder="(autogenerado)" readonly
+              aria-describedby="ayuda-id"
+            />
+            <small id="ayuda-id" class="texto-ayuda">Se generará automáticamente al guardar.</small>
+          </div>
 
+          <div class="campo">
+            <label for="run">run <span aria-hidden="true">*</span></label>
+            <input
+              type="text" id="run" name="run"
+              placeholder="12.345.678-9" required autocomplete="off"
+              pattern="^(\d{1,2}\.?\d{3}\.?\d{3}-[\dkK])$"
+              aria-describedby="ayuda-run"
+            />
+            <small id="ayuda-run" class="texto-ayuda">Formato chileno con dígito verificador.</small>
+          </div>
 
-          <fieldset class="grupo-campo">
-            <legend>Datos personales</legend>
+          <div class="campo">
+            <label for="nombres">nombres <span aria-hidden="true">*</span></label>
+            <input type="text" id="nombres" name="nombres" required autocomplete="given-name" />
+          </div>
 
-            <div class="campo">
-              <label for="run">run <span aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="run"
-                name="run"
-                placeholder="Ej.: 12.345.678-9"
-                autocomplete="off"
-                required
-                aria-describedby="run_ayuda"
-                pattern="^(\d{1,2}\.?\d{3}\.?\d{3}-[\dkK])$"
-              />
-            </div>
+          <div class="campo">
+            <label for="appaterno">appaterno <span aria-hidden="true">*</span></label>
+            <input type="text" id="appaterno" name="appaterno" required autocomplete="family-name" />
+          </div>
 
-            <div class="campo">
-              <label for="nombres">nombres <span aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="nombres"
-                name="nombres"
-                placeholder="Nombres"
-                autocomplete="given-name"
-                required
-              />
-            </div>
+          <div class="campo">
+            <label for="amaterno">amaterno</label>
+            <input type="text" id="amaterno" name="amaterno" autocomplete="additional-name" />
+          </div>
 
-            <div class="campo">
-              <label for="appaterno">appaterno <span aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="appaterno"
-                name="appaterno"
-                placeholder="Apellido paterno"
-                autocomplete="family-name"
-                required
-              />
-            </div>
+          <div class="campo">
+            <label for="f_nacim">f_nacim</label>
+            <input type="date" id="f_nacim" name="f_nacim" aria-label="Fecha de nacimiento" />
+          </div>
 
-            <div class="campo">
-              <label for="amaterno">amaterno</label>
-              <input
-                type="text"
-                id="amaterno"
-                name="amaterno"
-                placeholder="Apellido materno"
-                autocomplete="additional-name"
-              />
-            </div>
+          <div class="campo">
+            <label for="email">email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="nombre@dominio.cl" required autocomplete="email" />
+          </div>
 
-            <div class="campo">
-              <label for="f_nacim">f_nacim</label>
-              <input
-                type="date"
-                id="f_nacim"
-                name="f_nacim"
-                aria-label="Fecha de nacimiento"
-              />
-            </div>
-          </fieldset>
+          <div class="campo">
+            <label for="password">password <span aria-hidden="true">*</span></label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required minlength="6" autocomplete="new-password" />
+          </div>
 
+          <div class="campo">
+            <label for="telefono">telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" inputmode="tel" autocomplete="tel" />
+          </div>
 
-          <fieldset class="grupo-campo">
-            <legend>Contacto y dirección</legend>
+          <div class="campo">
+            <label for="direccion">direccion</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Calle, número, departamento" autocomplete="street-address" />
+          </div>
 
-            <div class="campo">
-              <label for="email">email <span aria-hidden="true">*</span></label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="nombre@dominio.cl"
-                autocomplete="email"
-                required
-              />
-            </div>
-
-            <div class="campo">
-              <label for="password">password <span aria-hidden="true">*</span></label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Contraseña"
-                autocomplete="new-password"
-                required
-                minlength="6"
-              />
-            </div>
-
-            <div class="campo">
-              <label for="telefono">telefono</label>
-              <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                placeholder="+56 9 1234 5678"
-                inputmode="tel"
-                autocomplete="tel"
-              />
-            </div>
-
-            <div class="campo">
-              <label for="direccion">direccion</label>
-              <input
-                type="text"
-                id="direccion"
-                name="direccion"
-                placeholder="Calle, número, departamento"
-                autocomplete="address-line1"
-              />
-            </div>
-
-
-            <div class="campo">
+          <div class="campo campo-doble">
+            <div class="input-group">
               <label for="region">region</label>
-              <input
-                type="text"
-                id="region"
-                name="region"
-                placeholder="Región"
-                autocomplete="address-level1"
-                list="lista-regiones"
-              />
-
-
+              <input type="text" id="region" name="region" placeholder="Región" list="lista-regiones" autocomplete="address-level1" />
               <datalist id="lista-regiones">
                 <option value="Arica y Parinacota"></option>
                 <option value="Tarapacá"></option>
@@ -213,16 +159,9 @@
               </datalist>
             </div>
 
-            <div class="campo">
+            <div class="input-group">
               <label for="comuna">comuna</label>
-              <input
-                type="text"
-                id="comuna"
-                name="comuna"
-                placeholder="Comuna"
-                autocomplete="address-level2"
-                list="lista-comunas"
-              />
+              <input type="text" id="comuna" name="comuna" placeholder="Comuna" list="lista-comunas" autocomplete="address-level2" />
               <datalist id="lista-comunas">
                 <option value="Aisén"></option>
                 <option value="Algarrobo"></option>
@@ -569,20 +508,12 @@
                 <option value="Zapallar"></option>
               </datalist>
             </div>
-          </fieldset>
+          </div>
 
-
-          <fieldset class="grupo-campo">
-            <legend>Clasificación</legend>
-
-            <div class="campo">
+          <div class="campo campo-doble">
+            <div class="input-group">
               <label for="id_t_usuario">id_t_usuario <span aria-hidden="true">*</span></label>
-              <select
-                id="id_t_usuario"
-                name="id_t_usuario"
-                required
-                aria-label="Tipo de usuario (ID numérico)"
-              >
+              <select id="id_t_usuario" name="id_t_usuario" required aria-label="Tipo de usuario (ID numérico)">
                 <option value="" selected>Selecciona…</option>
                 <option value="1">1 (Cliente)</option>
                 <option value="2">2 (Vendedor)</option>
@@ -590,64 +521,47 @@
               </select>
             </div>
 
-            <div class="campo">
+            <div class="input-group">
               <label for="id_estado">id_estado <span aria-hidden="true">*</span></label>
-              <select
-                id="id_estado"
-                name="id_estado"
-                required
-                aria-label="Estado del usuario (ID numérico)"
-              >
+              <select id="id_estado" name="id_estado" required aria-label="Estado del usuario (ID numérico)">
                 <option value="" selected>Selecciona…</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="1">1 (Activo)</option>
+                <option value="2">2 (Inactivo)</option>
+                <option value="3">3 (Otra opción)</option>
               </select>
             </div>
-          </fieldset>
+          </div>
 
+          <div class="campo">
+            <label for="desc_aplicado">desc_aplicado</label>
+            <textarea id="desc_aplicado" name="desc_aplicado" rows="3" placeholder="Descripción/observación aplicada"></textarea>
+          </div>
 
-          <fieldset class="grupo-campo">
-            <legend>Otros datos</legend>
-
-            <div class="campo">
-              <label for="desc_aplicado">desc_aplicado</label>
-              <textarea
-                id="desc_aplicado"
-                name="desc_aplicado"
-                rows="3"
-                placeholder="Descripción de descuento u observación aplicada"
-              ></textarea>
-            </div>
-
-            <div class="campo">
-              <label for="fecha_registro">fecha_registro</label>
-              <input
-                type="date"
-                id="fecha_registro"
-                name="fecha_registro"
-                aria-label="Fecha de registro"
-                value=""
-              />
-
-            </div>
-          </fieldset>
-
+          <div class="campo">
+            <label for="fecha_registro">fecha_registro</label>
+            <input type="date" id="fecha_registro" name="fecha_registro" aria-label="Fecha de registro" />
+          </div>
 
           <div class="form-acciones" role="group" aria-label="Acciones del formulario">
-            <button type="submit" class="btn btn-primario" aria-label="Guardar nuevo usuario">Guardar</button>
-            <button type="reset" class="btn" aria-label="Limpiar formulario">Limpiar</button>
-            <a href="./usuarios.html" class="btn" aria-label="Cancelar y volver a la lista">Cancelar</a>
+            <button type="submit" class="btn btn-primario">Registrar</button>
           </div>
         </form>
       </section>
-    </section>
-  </main>
+    </main>
+  </div>
 
-  <footer role="contentinfo" aria-label="Información de pie de página">
-    <small>&copy; 2025 — Panel de administración</small>
+
+
+  <footer class="admin-footer" role="contentinfo" aria-label="Información del sitio">
+    <div class="admin-footer__wrap">
+      <section aria-label="Contacto">
+        <p><strong>Mr. Pastel</strong> — Panel de Administración</p>
+        <p>Soporte: <a href="mailto:soporte@mrpastel.cl">soporte@mrpastel.cl</a></p>
+      </section>
+      <section aria-label="Legal">
+        <p>&copy; 2025 Mr. Pastel. Todos los derechos reservados.</p>
+      </section>
+    </div>
   </footer>
-
-
 </body>
 </html>

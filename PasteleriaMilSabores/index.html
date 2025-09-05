@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr. pastel</title>
+    <title>Home - Mr. pastel</title>
     <link rel="stylesheet" href="CSS/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -13,8 +13,8 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="images/logo1.png" alt="Pastelería 1000 Sabores" >
-                <h1>1000 Sabores</h1>
+                <img src="/PasteleriaMilSabores/images/logo1.png" alt="Pastelería 1000 Sabores" >
+                <h1>Mr. Pastel</h1>
             </div>
             <nav>
                 <ul class="nav-links">
@@ -23,15 +23,16 @@
                     <li><a href="pages/tienda/nosotros.html">Nosotros</a></li>
                     <li><a href="pages/tienda/blog.html">Blogs</a></li>
                     <li><a href="pages/tienda/contacto.html">Contacto</a></li>
+                    
                 </ul>
             </nav>
             <div class="header-icons">
-                <a href="carrito.html" class="cart-icon">
+                <a href="/PasteleriaMilSabores/pages/tienda/carrito.html" class="cart-icon active">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
+                    <span id="cart-count-header" class="cart-count">0</span>
                 </a>
-                <a href="pages/tienda/login.html" class="login-link">Login /</a>
-                <a href="pages/tienda/registro.html class="login-link">Registro</a>
+                <a href="/PasteleriaMilSabores/pages/tienda/login.html" class="login-link">Login</a>
+                <a href="/PasteleriaMilSabores/pages/tienda/registro.html" class="login-link">Registro</a>
             </div>
         </div>
     </header>
@@ -42,7 +43,7 @@
         <div class="hero-content">
             <h2>¡Celebramos 50 años de dulzura!</h2>
             <p>Ganadores del Récord Guinness 1995 por la torta más grande del mundo.</p>
-            <a href="productos.html" class="btn-cta">Ver Productos</a>
+            <a href="/PasteleriaMilSabores/pages/tienda/productos.html" class="btn-cta">Ver Productos</a>
         </div>
         
         <img src="images/logo1_sf - copia.png" alt="Hero Image" class="hero-image">
@@ -58,6 +59,7 @@
                     <img src="/PasteleriaMilSabores/images/torta_chocolate.jpg" alt="Producto 1">
                     <h3>Torta de Chocolate</h3>
                     <p>$15.000</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
                 <!-- Producto 2 -->
@@ -65,6 +67,7 @@
                     <img src="/PasteleriaMilSabores/images/chee_frutilla.jpg" alt="Producto 2">
                     <h3>Cheesecake Frutilla</h3>
                     <p>$12.000</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
                 <!-- Producto 3 -->
@@ -72,6 +75,7 @@
                     <img src="/PasteleriaMilSabores/images/pie_limon.jpg" alt="Producto 3">
                     <h3>Pie de Limón</h3>
                     <p>$10.000</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
                 <!-- Producto 4 -->
@@ -79,6 +83,7 @@
                     <img src="/PasteleriaMilSabores/images/kuchen.jpg" alt="Producto 4">
                     <h3>Kuchen de Manzana</h3>
                     <p>$11.000</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
                 <!-- Producto 5 -->
@@ -86,6 +91,7 @@
                     <img src="/PasteleriaMilSabores/images/tiramisu.jpg" alt="Producto 5">
                     <h3>Tiramisú</h3>
                     <p>$13.000</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
                 <!-- Producto 6 -->
@@ -93,10 +99,13 @@
                     <img src="/PasteleriaMilSabores/images/brownie.jpg" alt="Producto 6">
                     <h3>Brownies</h3>
                     <p>$9.000</p>
+                    <a href="producto_detalle.html">Ver Detalles</a>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
             </div>
         </div>
+        <div class="ver-mas">
+            <a href="/PasteleriaMilSabores/pages/tienda/productos.html" class="btn-cta">Ver Más Productos</a>
     </section>
 
     <!-- FOOTER -->
@@ -131,6 +140,7 @@
             <p>&copy; 2025 Pastelería 1000 Sabores. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="/PasteleriaMilSabores/JS/tienda.js"></script>
 </body>
 </html>
 
