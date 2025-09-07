@@ -7,23 +7,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/PasteleriaMilSabores/CSS/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <title>Panel de Administración | Mr. Pastel</title>
 </head>
 
-
-
-
-
 <body>
-  <!-- Todavía no cacho bien por qué pero entiendo que este enlace de salto es útil para personas que navegan con dispositivos con teconología asistida para discapacidades -->
   <a href="#contenido-principal" class="salto-contenido">Saltar al contenido</a>
 
-
-  <header role="banner" aria-label="Encabezado principal" class="admin-header">
+  <!-- Header -->
+  <header aria-label="Encabezado principal" class="admin-header">
     <div class="admin-header__wrap">
       <div class="marca">
-        <a href="./index.html" class="marca__link" aria-label="Ir al inicio del panel">
-          <img src="/PasteleriaMilSabores/images/logo.png" alt="Logo de Mr. Pastel" class="marca__logo">
+        <a href="./home-admin.html" class="marca__link" aria-label="Ir al inicio del panel">
+          <img src="/PasteleriaMilSabores/images/logo1_sf - copia.png" alt="Logo de Mr. Pastel" class="marca__logo">
           <span class="marca__nombre">Mr. Pastel</span>
         </a>
       </div>
@@ -32,56 +29,117 @@
         <ul>
           <li><a href="./perfil.html">Mi perfil</a></li>
           <li><a href="./ajustes.html">Ajustes</a></li>
-          <li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
+          <li><a href="/PasteleriaMilSabores/index.html">Cerrar sesión</a></li>
         </ul>
       </nav>
-
-      <!-- Este botón debiera tener, después, lógica de JS para ocultar y mostrar el panel lateral, hay que averiguar cómo -->
-      <button class="btn-menu" type="button" aria-controls="menu-lateral" aria-expanded="false" aria-label="Mostrar u ocultar menú lateral">
-        ☰
-      </button>
     </div>
   </header>
 
-
-
-
+  <!-- Layout -->
   <div class="admin-layout">
-    <aside id="menu-lateral" class="menu-lateral" role="navigation" aria-label="Menú lateral del administrador">
+    <!-- Sidebar -->
+    <aside id="menu-lateral" class="menu-lateral" aria-label="Menú lateral del administrador">
       <div class="menu-lateral__seccion">
-        <p class="menu-lateral__titulo">Navegación</p>
-        <ul class="menu-lateral__lista">
-          <li><a href="./home-admin.html" aria-current="page">🏠 Inicio</a></li>
-          <li><a href="./usuarios.html">👤 Usuarios</a></li>
-          <li><a href="./nuevo-usuario.html">➕ Nuevo Usuario</a></li>
-          <li><a href="./productos.html">🧁 Productos</a></li>
-          <li><a href="./pedidos.html">🛒 Pedidos</a></li>
-          <li><a href="./reportes.html">📈 Reportes</a></li>
-          <li><a href="./ajustes.html">⚙️ Ajustes</a></li>
-        </ul>
-      </div>
+        <div>
+          <button class="btn-toggle-sidebar">☰</button>
 
-      <div class="menu-lateral__seccion">
-        <p class="menu-lateral__titulo">Ayuda</p>
+        </div>
+
         <ul class="menu-lateral__lista">
-          <li><a href="./soporte.html">Soporte</a></li>
-          <li><a href="./documentacion.html">Documentación</a></li>
+          <li><a href="./home-admin.html" aria-current="page">🏠 <span class="titulo">Home</span></a></li>
+          <li><a href="./usuarios.html">👤 <span class="titulo">Gestión de Usuarios</span></a></li>
+          <li><a href="./productos.html">🧁 <span class="titulo">Gestión de Productos</span></a></li>
+          <li><a href="./ordenes.html">🛒 <span class="titulo">Órdenes</span></a></li>
+          <li><a href="./reportes.html">📈 <span class="titulo">Reportes</span></a></li>
+          <li><a href="./ajustes.html">⚙️ <span class="titulo">Configuración</span></a></li>
         </ul>
       </div>
     </aside>
 
-    <main id="contenido-principal" class="admin-contenido" role="main" aria-labelledby="bienvenida-titulo">
+    <!-- Main -->
+    <main id="contenido-principal" class="admin-contenido" aria-labelledby="bienvenida-titulo">
       <section class="bloque">
         <header class="bloque__header">
-          <h1 id="bienvenida-titulo">Bienvenido Mr. Pastel</h1>
+          <h1 id="bienvenida-titulo">Bienvenido, Administrador</h1>
         </header>
+      </section>
+
+      <!-- Resumen -->
+      <section class="bloque">
+        <header class="bloque__header">
+          <h2>Resumen del día</h2>
+        </header>
+        <div class="resumen-dia">
+          <div class="resumen-dia__item">
+            <h3>Total usuarios registrados</h3>
+            <p>1,234</p>
+          </div>
+          <div class="resumen-dia__item">
+            <h3>Total productos activos</h3>
+            <p>320</p>
+          </div>
+          <div class="resumen-dia__item">
+            <h3>Ventas del mes</h3>
+            <p>$12,345.67</p>
+          </div>
+          <div class="resumen-dia__item">
+            <h3>Stock bajo crítico</h3>
+            <p>15 productos</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Placeholder gráficos -->
+      <section class="bloque" role="region" aria-labelledby="graficos-titulo">
+        <header class="bloque__header">
+          <h2 id="graficos-titulo">Gráficos básicos</h2>
+        </header>
+        <div class="grafico-placeholder">
+  <canvas id="ventasMes"></canvas>
+</div>
+
+      </section>
+
+      <!-- Actividad reciente -->
+      <section class="bloque" role="region" aria-labelledby="actividad-titulo">
+        <header class="bloque__header">
+          <h2 id="actividad-titulo">Actividad reciente</h2>
+        </header>
+        <ul class="actividad-lista">
+          <li>Usuario Juan registró un pedido</li>
+          <li>Producto "Torta de Chocolate" actualizado</li>
+        </ul>
+      </section>
+
+      <!-- Productos críticos -->
+      <section class="bloque" role="region" aria-labelledby="stock-titulo">
+        <header class="bloque__header">
+          <h2 id="stock-titulo">Productos con stock crítico</h2>
+        </header>
+        <table class="tabla-stock">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Stock actual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Torta Selva Negra</td><td>3</td></tr>
+            <tr><td>Pie de Limón</td><td>5</td></tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </div>
 
+  <!-- Footer -->
+  <footer>
 
+  <div class="footer-bottom">
+            <p>&copy; 2025 Mr. Pastel. Todos los derechos reservados.</p>
+        </div>
+  </footer>
 
-
-  <footer role="contentinfo" aria-label="Información del sitio" class="admin-footer">
-    <div class="admin-footer__wrap">
-      <section aria-label="Información de contacto">
+  <script src="/PasteleriaMilSabores/JS/main.js"></script>
+</body>
+</html>
