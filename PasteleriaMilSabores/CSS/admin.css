@@ -104,50 +104,91 @@ html, body{
 }
 .header-acciones a:hover{ background: color-mix(in srgb, var(--adm-rosa) 40%, #fff); }
 
-.btn-menu{
+.btn-toggle-sidebar{
   justify-self: end;
   appearance: none; border:0; cursor:pointer;
-  padding: 10px 12px; border-radius: 10px;
+  padding: 10px 12px; border-radius: 8px;
+  margin: 15px ;
   background: var(--adm-rosa); color: var(--adm-text); font-weight: 700;
 }
 
 /* ===========================
-   LAYOUT: SIDEBAR + MAIN
+   SIDEBAR (normal + colapsado)
    =========================== */
-.admin-layout{
-  display: grid;
-  grid-template-columns: 1fr; /* móvil: una columna */
-  gap: 0;
-}
-
-/* Sidebar (móvil oculto, desktop visible) */
-.menu-lateral{
-  display: none; /* La idea es que esto lo abramos con JS, entiendo que hay que agregar una tributo .isopen al body o aside */
+.menu-lateral {
+  width: var(--adm-sidebar-w); /* 260px por defecto */
+  transition: width 0.3s ease;
+  overflow: hidden;
   background: var(--adm-surface);
   border-right: 1px solid var(--adm-border);
   padding: 16px;
+  min-height: calc(100dvh - 70px); /* Asegura ocupar toda la altura */
 }
-.menu-lateral__titulo{
-  font-weight: 700; color: var(--adm-choco); margin: 6px 0 8px;
+
+/* Estado colapsado (solo íconos) */
+.menu-lateral.colapsado {
+  width: 60px;
+  padding: 16px 8px; /* menos padding en colapsado */
 }
-.menu-lateral__lista{
-  list-style: none; padding: 0; margin: 0 0 16px 0;
-  display: grid; gap: 6px;
+
+/* Ocultar títulos en colapsado */
+.menu-lateral.colapsado .menu-lateral__titulo,
+.menu-lateral.colapsado .titulo {
+  display: none;
 }
-.menu-lateral__lista a{
-  display: block; text-decoration: none; color: var(--adm-text);
-  padding: 10px 12px; border-radius: 8px;
+
+/* Enlaces del menú */
+.menu-lateral__lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: grid;
+  gap: 6px;
 }
+
+.menu-lateral__lista a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--adm-text);
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
 .menu-lateral__lista a[aria-current="page"],
-.menu-lateral__lista a:hover{
+.menu-lateral__lista a:hover {
   background: color-mix(in srgb, var(--adm-rosa) 40%, #fff);
 }
 
-.admin-contenido{
-  padding: 20px min(4vw, 24px) 40px;
+/* En colapsado, centramos solo el ícono */
+.menu-lateral.colapsado .menu-lateral__lista a {
+  justify-content: center;
+  gap: 0;
 }
 
-.bloque{ margin-bottom: 28px; }
+/* ===========================
+   AJUSTE DEL LAYOUT
+   =========================== */
+/* Normal (sidebar ancho) */
+.admin-layout {
+  display: grid;
+  grid-template-columns: var(--adm-sidebar-w) 1fr;
+  gap: 0;
+}
+
+/* Colapsado */
+body.menu-colapsado .admin-layout {
+  grid-template-columns: 60px 1fr;
+}
+
+/* ===========================
+   MAIN - BLOQUES GENERALES
+   =========================== */
+
+.bloque{ 
+  margin-bottom: 28px; }
 .bloque__header{ margin-bottom: 8px; }
 .bloque__descripcion{ color: var(--adm-text-sec); margin: 4px 0 0; }
 
@@ -357,4 +398,155 @@ h1, h2, h3{
     padding-top: 24px;
     padding-bottom: 32px;
   }
+}
+/* Menú lateral */
+.menu-lateral {
+  width: 150px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+/* Estado colapsado (solo íconos) */
+.menu-lateral.colapsado {
+  width: 60px;
+}
+
+/* Ocultar texto en colapsado */
+.menu-lateral.colapsado .menu-lateral__lista a {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-lateral.colapsado .menu-lateral__lista a::after {
+  content: attr(data-titulo);
+  display: none;
+}
+
+/* Normal (ícono + texto) */
+.menu-lateral__lista a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-lateral__titulo {
+  margin-left: 10px;
+  font-weight: bold;
+}
+/* Ocultar los títulos cuando está colapsado */
+.menu-lateral.colapsado .titulo {
+  display: none;
+}
+
+.menu-lateral.colapsado .menu-lateral__lista a {
+  justify-content: center;
+}
+.menu-lateral.colapsado .menu-lateral__lista a::after {
+  content: attr(data-titulo);
+  display: none;
+}
+
+/* ===========================
+   MAIN - HOME ADMIN
+   =========================== */
+
+/* Bloques generales */
+.resumen-dia {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.resumen-dia__item {
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border);
+  border-radius: var(--adm-radius);
+  box-shadow: var(--adm-shadow);
+  padding: 16px;
+  text-align: center;
+}
+
+.resumen-dia__item h3 {
+  font-size: 1rem;
+  color: var(--adm-choco);
+  margin: 0 0 6px;
+}
+
+.resumen-dia__item p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--adm-text);
+  margin: 0;
+}
+
+/* Placeholder de gráficos */
+.grafico-placeholder {
+  border: 2px dashed var(--adm-border);
+  border-radius: var(--adm-radius);
+  padding: 40px;
+  text-align: center;
+  font-style: italic;
+  color: var(--adm-text-sec);
+  background: #fff;
+}
+
+/* Actividad reciente */
+.actividad-lista {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 10px 0 0;
+  color: var(--adm-text);
+}
+
+.actividad-lista li {
+  margin-bottom: 6px;
+}
+
+/* Tabla de productos críticos */
+.tabla-stock {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border);
+  border-radius: var(--adm-radius);
+  overflow: hidden;
+  box-shadow: var(--adm-shadow);
+}
+
+.tabla-stock th,
+.tabla-stock td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--adm-border);
+}
+
+.tabla-stock thead th {
+  background: color-mix(in srgb, var(--adm-rosa) 25%, #fff);
+  color: var(--adm-choco);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .resumen-dia {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .resumen-dia {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.footer-bottom {
+    background:black;
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #ccc;
 }
