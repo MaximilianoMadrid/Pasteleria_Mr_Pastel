@@ -10,21 +10,13 @@
   <title>Nuevo Usuario | Panel de Administración</title>
 </head>
 
-
-
-
-
-<body class="admin-nuevo-usuario">
-      <!-- Todavía no cacho bien por qué pero entiendo que este enlace de salto es útil para personas que navegan con dispositivos con teconología asistida para discapacidades -->
-  <a href="#contenido-principal" class="salto-contenido">Saltar al contenido</a>
-
-
-
-  <header class="admin-header" role="banner" aria-label="Encabezado principal">
+<body >
+  <!-- Header -->
+  <header aria-label="Encabezado principal" class="admin-header">
     <div class="admin-header__wrap">
       <div class="marca">
-        <a href="./index.html" class="marca__link" aria-label="Ir al inicio del panel">
-          <img src="/PasteleriaMilSabores/images/logo.png" alt="Logo de Mr. Pastel" class="marca__logo">
+        <a href="./home-admin.html" class="marca__link" aria-label="Ir al inicio del panel">
+          <img src="/PasteleriaMilSabores/images/logo1_sf - copia.png" alt="Logo de Mr. Pastel" class="marca__logo">
           <span class="marca__nombre">Mr. Pastel</span>
         </a>
       </div>
@@ -32,27 +24,28 @@
       <nav class="header-acciones" aria-label="Acciones de usuario">
         <ul>
           <li><a href="./perfil.html">Mi perfil</a></li>
-          <li><a href="./ajustes.html">Ajustes</a></li>
-          <li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
+          <li><a href="/PasteleriaMilSabores/index.html">Cerrar sesión</a></li>
         </ul>
       </nav>
-
-      <button class="btn-menu" type="button" aria-controls="menu-lateral" aria-expanded="false" aria-label="Mostrar u ocultar menú lateral">☰</button>
     </div>
   </header>
-
+  <!-- Layout -->
   <div class="admin-layout">
-    <aside id="menu-lateral" class="menu-lateral" role="navigation" aria-label="Menú lateral del administrador">
+    <!-- Sidebar -->
+    <aside id="menu-lateral" class="menu-lateral" aria-label="Menú lateral del administrador">
       <div class="menu-lateral__seccion">
-        <p class="menu-lateral__titulo">Navegación</p>
+        <div>
+          <button class="btn-toggle-sidebar">☰</button>
+
+        </div>
+
         <ul class="menu-lateral__lista">
-          <li><a href="./home-admin.html">🏠 Inicio</a></li>
-          <li><a href="./usuarios.html">👤 Usuarios</a></li>
-          <li><a href="./nuevo-usuario.html" aria-current="page">➕ Nuevo Usuario</a></li>
-          <li><a href="./productos.html">🧁 Productos</a></li>
-          <li><a href="./pedidos.html">🛒 Pedidos</a></li>
-          <li><a href="./reportes.html">📈 Reportes</a></li>
-          <li><a href="./ajustes.html">⚙️ Ajustes</a></li>
+          <li><a href="./home-admin.html" >🏠 <span class="titulo">Home</span></a></li>
+          <li><a href="./usuarios.html"aria-current="page">👤 <span class="titulo">Gestión de Usuarios</span></a></li>
+          <li><a href="./productos-admin.html">🧁 <span class="titulo">Gestión de Productos</span></a></li>
+          <li><a href="./ordenes.html">🛒 <span class="titulo">Órdenes</span></a></li>
+          <li><a href="./reportes.html">📈 <span class="titulo">Reportes</span></a></li>
+          <li><a href="./ajustes.html">⚙️ <span class="titulo">Configuración</span></a></li>
         </ul>
       </div>
     </aside>
@@ -552,16 +545,14 @@
 
 
 
-  <footer class="admin-footer" role="contentinfo" aria-label="Información del sitio">
-    <div class="admin-footer__wrap">
-      <section aria-label="Contacto">
-        <p><strong>Mr. Pastel</strong> — Panel de Administración</p>
-        <p>Soporte: <a href="mailto:soporte@mrpastel.cl">soporte@mrpastel.cl</a></p>
-      </section>
-      <section aria-label="Legal">
-        <p>&copy; 2025 Mr. Pastel. Todos los derechos reservados.</p>
-      </section>
-    </div>
+<!-- Footer -->
+  <footer>
+
+  <div class="footer-bottom">
+            <p>&copy; 2025 Mr. Pastel. Todos los derechos reservados.</p>
+        </div>
   </footer>
+
+  <script src="/PasteleriaMilSabores/JS/main.js"></script>
 </body>
 </html>
