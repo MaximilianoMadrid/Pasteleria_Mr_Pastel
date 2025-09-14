@@ -550,3 +550,81 @@ h1, h2, h3{
     font-size: 0.85rem;
     color: #ccc;
 }
+.bloque__header-flex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.btn {
+    display: inline-block; 
+    text-decoration: none; 
+    padding: 10px 16px; 
+    border-radius: 8px; 
+    background: #000; 
+    color: #fff; 
+    font-weight: 700;
+}
+.toolbar {
+    display: flex; 
+    gap: 12px; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin-bottom: 10px;
+}
+.tabla-miniatura {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.acciones {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.btn-accion {
+    padding: 6px 10px;
+    border: 1px solid var(--adm-border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--adm-text);
+    background-color: var(--adm-surface);
+    font-size: 0.85rem;
+}
+.btn-accion:hover {
+    background-color: color-mix(in srgb, var(--adm-rosa) 40%, #fff);
+}
+.btn-editar {
+    background-color: #8B4513;
+    color: white;
+    border-color: #8B4513;
+}
+.btn-desactivar {
+    background-color: #FFC0CB;
+    color: var(--adm-text);
+    border-color: #FFC0CB;
+}
+.btn-eliminar {
+    background-color: #EF5350;
+    color: white;
+    border-color: #EF5350;
+}
+.paginacion {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 10px;
+}
+.pagina, .paginacion button {
+    background-color: var(--adm-surface);
+    border: 1px solid var(--adm-border);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.pagina.actual {
+    background-color: var(--adm-rosa);
+    font-weight: bold;
+}
