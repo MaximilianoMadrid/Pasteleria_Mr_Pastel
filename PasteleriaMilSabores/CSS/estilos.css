@@ -484,6 +484,7 @@ footer {
         align-items: center;
     }
 }
+
 /* === ESTILOS ESPECÍFICOS PARA PRODUCTOS === */
 /* Estilos de la sección principal del catálogo */
 #Catalogo {
@@ -538,7 +539,9 @@ footer {
     background-color: #fff;
     transition: border-color 0.3s ease;
 }
-
+#filtros option {
+    color: rgba(85, 85, 85, 0.8); /* gris con 60% opacidad */
+}
 #filtros select:hover,
 #filtros select:focus {
     border-color: #d94f4f; /* Color de acento al interactuar */
@@ -654,10 +657,13 @@ footer {
 }
 
 .detalle-contenedor img {
-  width: 350px;
-  border-radius: 12px;
+
+  width: 400px;
+  height: 350px;
+  border-radius: 40px;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 22px rgba(0,0,0,0.2);
+
 }
 
 .detalle-info {
@@ -665,9 +671,17 @@ footer {
 }
 
 .detalle-info h2 {
-  font-size: 2rem;
+<
+  font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #4A2C2A;
+  color: #5f5756;
+}
+
+.descripcion {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+
 }
 
 .detalle-info .precio {
@@ -688,14 +702,18 @@ footer {
   width: 100%;
   padding: 8px;
   border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-bottom: 15px;
+
+  border: 2px solid #ccc;
+  margin-bottom: 1px;
+
 }
 
 .detalle-info button {
   background-color: #FF6F61;
   color: white;
-  padding: 12px 24px;
+
+  padding: 10px 100px;
+
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -705,7 +723,6 @@ footer {
 .detalle-info button:hover {
   background-color: #E63946;
 }
-
 
 /* === ESTILOS PARA NOSOTROS.HTML === */
 

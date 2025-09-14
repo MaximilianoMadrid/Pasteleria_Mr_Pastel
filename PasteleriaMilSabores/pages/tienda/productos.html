@@ -50,12 +50,11 @@
                     <option value="Especiales">Tortas Especiales</option>
                 </select>
 
-                <label for ="orden">Ordenar por:</label>
+                <label for ="orden"></label>
                 <select id="orden">
+                    <option value="default">filtrar por precio</option>
                     <option value="precio-asc">Precio: Menor a Mayor</option>
                     <option value="precio-desc">Precio: Mayor a Menor</option>
-                    <option value="popularidad">Popularidad</option>
-                    <option value="novedad">Novedad</option>
                 </select>
            </form>
         </section>
@@ -190,22 +189,7 @@
                     <h3>Torta Especial de Boda</h3>
                     <p>$60.000 CLP</p>
                     <a href="producto-detalle.html?id=16">Ver detalle</a>
-                    <button>Añadir al Carrito</button>
-                </article>
 
-                <article class="producto">
-                    <img src="/PasteleriaMilSabores/images/imagenes_producto/pastel-aniversario.jpg" alt="Torta Especial de Aniversario">
-                    <h3>Torta Especial de Aniversario</h3>
-                    <p>$58.000 CLP</p>
-                    <a href="producto-detalle.html?id=17">Ver Detalles</a>
-                    <button>Añadir al Carrito</button>
-                </article>
-
-                <article class ="producto">
-                    <img src="/PasteleriaMilSabores/images/imagenes_producto/pastel-empresa.jpg" alt="Torta Especial para Eventos Empresariales">
-                    <h3>Torta Especial para Eventos Empresariales</h3>
-                    <p>$65.000 CLP</p>
-                    <a href="producto-detalle.html?id=18">Ver detalle</a>
                     <button>Añadir al Carrito</button>
                 </article>
 
@@ -243,6 +227,81 @@
             <p>&copy; 2025 Mr. Pastel. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script>
+      // Array de productos 
+    const productos = [
+    { id: 1, nombre: "Torta Cuadrada de Chocolate", categoria: "Cuadradas", precio: 45000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/tarta-chocolate-ganache.jpg" },
+    { id: 2, nombre: "Torta Cuadrada de Frutas", categoria: "Cuadradas", precio: 50000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/torta-de-frutas.jpg" },
+    { id: 3, nombre: "Torta Circular de Vainilla", categoria: "Circulares", precio: 40000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/torta de vainilla.jpg" },
+    { id: 4, nombre: "Torta Circular de Manjar", categoria: "Circulares", precio: 42000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/torta-manjar-nuez.jpg" },
+    { id: 5, nombre: "Mousse de Chocolate", categoria: "Individuales", precio: 5000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/mousse-chocolate.jpg" },
+    { id: 6, nombre: "Tiramisú Clásico", categoria : "Individuales", precio: 6000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/tiramisu.jpg" },
+    { id: 7, nombre: "Torta Sin Azúcar de Naranja", categoria: "Sin Azucar", precio: 48000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/torta-naranja.jpg" },
+    { id: 8, nombre: "Postre Cheesecake Sin Azucar", categoria: "Sin Azucar", precio: 48000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/chesecake.jpg" },
+    { id: 9, nombre: "Empanada de Manzana", categoria: "Pastelería Tradicional", precio: 3000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/empanadas-manzana.jpg" },
+    { id: 10, nombre: "Tarta de Santiago", categoria: "Pastelería Tradicional", precio: 6000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/tarta-santiago.jpg" },
+    { id: 11, nombre: "Brownie Sin Gluten", categoria: "Sin Gluten", precio: 4000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/brownie-sin-gluten.jpg" },
+    { id: 12, nombre: "Pan Sin Gluten", categoria: "Sin Gluten", precio: 3500, imagen: "/PasteleriaMilSabores/images/imagenes_producto/pan-sin-gluten.jpg" },
+    { id: 13, nombre: "Torta Vegana de Chocolate", categoria: "Veganos", precio: 50000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/chocolate-vegano.jpg" },
+    { id: 14, nombre: "Galletas Veganas de Avena", categoria: "Veganos", precio: 4500, imagen: "/PasteleriaMilSabores/images/imagenes_producto/galletas-avena.jpg" },
+    { id: 15, nombre: "Torta Especial de Cumpleaños", categoria: "Especiales", precio: 55000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/pastel-cumpleanos.jpg" },
+    { id: 16, nombre: "Torta Especial de Boda", categoria: "Especiales", precio: 60000, imagen: "/PasteleriaMilSabores/images/imagenes_producto/pastel-boda.jpg" },
+    ];
+     // Función para renderizar productos
+    function renderizarProductos(lista) {
+        const contenedor = document.querySelector('.galleta');
+        contenedor.innerHTML = '';
+        lista.forEach(producto => {
+            contenedor.innerHTML += `
+               <article class="producto">
+               <img src="${producto.imagen}" alt="${producto.nombre}">
+               <h3>${producto.nombre}</h3>
+               <p>$${producto.precio.toLocaleString()} CLP</p>
+               <a href="producto-detalle.html?id=${producto.id}">Ver Detalles</a>
+               <button>Añadir al Carrito</button>
+             </article>
+           `;
+        });
+    }
+     // Mostrar todos al cargar
+    renderizarProductos(productos);
+     // Filtrar al cambiar el select
+    document.getElementById('categoria').addEventListener('change', function() {
+        const categoria = this.value;
+        if (categoria === "Todas") {
+          renderizarProductos(productos);
+        } else {
+          const filtrados = productos.filter(p => p.categoria === categoria);
+          renderizarProductos(filtrados);
+       }
+    });
+      //  Ordenar productos al cambiar el select de orden
+   document.getElementById('orden').addEventListener('change', function() {
+       aplicarFiltrosYOrden();
+    });
+      //  Unifica el filtrado y el orden en una sola función
+    function aplicarFiltrosYOrden() {
+        const categoria = document.getElementById('categoria').value;
+        const orden = document.getElementById('orden').value;
+        let lista = [...productos];
+         // Filtrar por categoría
+        if (categoria !== "Todas") {
+            lista = lista.filter(p => p.categoria === categoria);
+        }
+          // Ordenar por precio
+        if (orden === "precio-asc") {
+            lista.sort((a, b) => a.precio - b.precio);
+        } else if (orden === "precio-desc") {
+            lista.sort((a, b) => b.precio - a.precio);
+        }  
+
+        renderizarProductos(lista);
+    }
+       // Llama a la función unificada en ambos eventos
+    document.getElementById('categoria').addEventListener('change', aplicarFiltrosYOrden);
+       // Mostrar todos al cargar
+     aplicarFiltrosYOrden();
+    </script>
     <script src="/PasteleriaMilSabores/JS/tienda.js"></script>
 </body>
 
