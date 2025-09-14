@@ -1,3 +1,4 @@
+
 //Productos disponibles
 const productos = [
 
@@ -178,5 +179,6 @@ const productos = [
       localStorage.setItem("carrito", JSON.stringify(carrito));
       
       alert(`Agregado al carrito: ${producto.nombre}\nTamaño: ${tamano}\nPrecio: $${precio.toLocaleString()} CLP\nNota: ${nota}`);
+
       // Aquí podrías guardar en localStorage o enviarlo al backend
     }

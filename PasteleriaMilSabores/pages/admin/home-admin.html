@@ -12,9 +12,7 @@
   <title>Panel de Administración | Mr. Pastel</title>
 </head>
 
-<body>
-  <a href="#contenido-principal" class="salto-contenido">Saltar al contenido</a>
-
+<body class="menu-colapsado">
   <!-- Header -->
   <header aria-label="Encabezado principal" class="admin-header">
     <div class="admin-header__wrap">
@@ -28,7 +26,6 @@
       <nav class="header-acciones" aria-label="Acciones de usuario">
         <ul>
           <li><a href="./perfil.html">Mi perfil</a></li>
-          <li><a href="./ajustes.html">Ajustes</a></li>
           <li><a href="/PasteleriaMilSabores/index.html">Cerrar sesión</a></li>
         </ul>
       </nav>
@@ -38,7 +35,7 @@
   <!-- Layout -->
   <div class="admin-layout">
     <!-- Sidebar -->
-    <aside id="menu-lateral" class="menu-lateral" aria-label="Menú lateral del administrador">
+    <aside id="menu-lateral" class="menu-lateral colapsado" aria-label="Menú lateral del administrador">
       <div class="menu-lateral__seccion">
         <div>
           <button class="btn-toggle-sidebar">☰</button>
@@ -46,12 +43,12 @@
         </div>
 
         <ul class="menu-lateral__lista">
-          <li><a href="./home-admin.html" aria-current="page">🏠 <span class="titulo">Home</span></a></li>
-          <li><a href="./usuarios.html">👤 <span class="titulo">Gestión de Usuarios</span></a></li>
-          <li><a href="./productos.html">🧁 <span class="titulo">Gestión de Productos</span></a></li>
-          <li><a href="./ordenes.html">🛒 <span class="titulo">Órdenes</span></a></li>
-          <li><a href="./reportes.html">📈 <span class="titulo">Reportes</span></a></li>
-          <li><a href="./ajustes.html">⚙️ <span class="titulo">Configuración</span></a></li>
+          <li><a href="./home-admin.html" aria-current="page" title="Home">🏠 <span class="titulo" >Home</span></a></li>
+          <li><a href="./usuarios.html" title="Usuarios">👤 <span class="titulo">Gestión de Usuarios</span></a></li>
+          <li><a href="./productos-admin.html" title="Productos">🧁 <span class="titulo">Gestión de Productos</span></a></li>
+          <li><a href="./ordenes.html" title="Ordenes">🛒 <span class="titulo">Órdenes</span></a></li>
+          <li><a href="./reportes.html" title="Reportes">📈 <span class="titulo">Reportes</span></a></li>
+          <li><a href="./ajustes.html" title="Configuración">⚙️ <span class="titulo">Configuración</span></a></li>
         </ul>
       </div>
     </aside>
