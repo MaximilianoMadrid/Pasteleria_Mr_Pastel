@@ -1,231 +1,209 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../CSS/admin.css">
-  <title>Usuarios | Panel de Administración</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../CSS/admin.css">
+    <title>Usuarios | Panel de Administración</title>
 </head>
 
+<body class="menu-colapsado">
+    <header aria-label="Encabezado principal" class="admin-header">
+        <div class="admin-header__wrap">
+            <div class="marca">
+                <a href="./home-admin.html" class="marca__link" aria-label="Ir al inicio del panel">
+                    <img src="/PasteleriaMilSabores/images/logo1_sf - copia.png" alt="Logo de Mr. Pastel" class="marca__logo">
+                    <span class="marca__nombre">Mr. Pastel</span>
+                </a>
+            </div>
 
-
-
-
-<body class="admin-usuarios">
-    <!-- Todavía no cacho bien por qué pero entiendo que este enlace de salto es útil para personas que navegan con dispositivos con teconología asistida para discapacidades -->
-  <a href="#contenido-principal" class="salto-contenido">Saltar al contenido</a>
-
-  <header class="admin-header" role="banner" aria-label="Encabezado principal">
-    <div class="admin-header__wrap">
-      <div class="marca">
-        <a href="home-admin.html" class="marca__link" aria-label="Ir al inicio del panel">
-          <img src="/PasteleriaMilSabores/images/logo.png" alt="Logo de Mr. Pastel" class="marca__logo">
-          <span class="marca__nombre">Mr. Pastel</span>
-        </a>
-      </div>
-
-      <nav class="header-acciones" aria-label="Acciones de usuario">
-        <ul>
-          <li><a href="./perfil.html">Mi perfil</a></li>
-          <li><a href="./ajustes.html">Ajustes</a></li>
-          <li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
-        </ul>
-      </nav>
-
-      <button class="btn-menu" type="button" aria-controls="menu-lateral" aria-expanded="false" aria-label="Mostrar u ocultar menú lateral">☰</button>
-    </div>
-  </header>
-
-  <div class="admin-layout">
-    <aside id="menu-lateral" class="menu-lateral" role="navigation" aria-label="Menú lateral del administrador">
-      <div class="menu-lateral__seccion">
-        <p class="menu-lateral__titulo">Navegación</p>
-        <ul class="menu-lateral__lista">
-          <li><a href="./home-admin.html">🏠 Inicio</a></li>
-          <li><a href="./usuarios.html" aria-current="page">👤 Usuarios</a></li>
-          <li><a href="./nuevo-usuario.html">➕ Nuevo Usuario</a></li>
-          <li><a href="./productos.html">🧁 Productos</a></li>
-          <li><a href="./pedidos.html">🛒 Pedidos</a></li>
-          <li><a href="./reportes.html">📈 Reportes</a></li>
-          <li><a href="./ajustes.html">⚙️ Ajustes</a></li>
-        </ul>
-      </div>
-    </aside>
-
-
-
-
-
-
-    <main id="contenido-principal" class="admin-contenido" role="main" aria-labelledby="titulo-pagina">      
-      <header class="bloque__header" style="display:flex; align-items:center; gap:12px; justify-content:space-between; margin-bottom:12px;">
-        <h1 id="titulo-pagina" style="margin:0;">Usuarios</h1>
-        <a href="./nuevo-usuario.html" class="btn btn-principal" aria-label="Crear nuevo usuario" 
-           style="display:inline-block; text-decoration:none; padding:10px 16px; border-radius:8px; background:#000; color:#fff; font-weight:700;">
-          NUEVO USUARIO
-        </a>
-      </header>
-
-      <div class="toolbar" aria-label="Controles de la lista" style="display:flex; gap:12px; align-items:center; justify-content:space-between; margin-bottom:10px;">
-        <div class="toolbar-izq">
-          <label for="f-criterio" class="sr-only">Criterio</label>
-          <select id="f-criterio" name="criterio" aria-label="Criterio de listado">
-            <option value="">Todos los usuarios</option>
-            <option value="activos">Activos</option>
-            <option value="inactivos">Inactivos</option>
-            <option value="administradores">Administradores</option>
-            <option value="vendedores">Vendedores</option>
-            <option value="clientes">Clientes</option>
-          </select>
+            <nav class="header-acciones" aria-label="Acciones de usuario">
+                <ul>
+                    <li><a href="./perfil.html">Mi perfil</a></li>
+                    <li><a href="/PasteleriaMilSabores/index.html">Cerrar sesión</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
 
-
-
-      <section class="tabla-envuelta" role="region" aria-label="Tabla de usuarios">
-        <table class="tabla" aria-describedby="resumen-usuarios">
-          <caption id="resumen-usuarios" class="sr-only">Listado de usuarios del sistema</caption>
-          <thead>
-            <tr>
-              <th>id_usuario</th>
-              <th>run</th>
-              <th>nombres</th>
-              <th>appaterno</th>
-              <th>amaterno</th>
-              <th>email</th>
-              <th>password</th>
-              <th>f_nacim</th>
-              <th>id_t_usuario</th>
-              <th>telefono</th>
-              <th>direccion</th>
-              <th>region</th>
-              <th>comuna</th>
-              <th>id_estado</th>
-              <th>desc_aplicado</th>
-              <th>fecha_registro</th>
-              <th class="col-acciones">acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Usuario 1. La idea es que después lo borremos cuando JS inyecte usuarios de forma automática, aunque sepa moya cómo lo vamos a hacer -->
-            <tr>
-              <td>1</td>
-              <td>19011022K</td>
-              <td>Ana</td>
-              <td>Pérez</td>
-              <td>Gómez</td>
-              <td>ana@example.com</td>
-              <td>••••••••</td>
-              <td>1990-03-15</td>
-              <td>3</td>
-              <td>+56 9 1234 5678</td>
-              <td>Av. Siempre Viva 742</td>
-              <td>RM</td>
-              <td>Quinta Normal</td>
-              <td>1</td>
-              <td>10% bienvenida</td>
-              <td>2025-08-20</td>
-              <td>
-                <div class="acciones" role="group">
-                  <a href="./usuario-detalle.html?id=1" class="btn-accion">Ver</a>
-                  <a href="./usuario-editar.html?id=1" class="btn-accion">Editar</a>
-                  <button type="button" class="btn-accion">Eliminar</button>
-                  <button type="button" class="btn-accion">Cambiar estado</button>
+    <div class="admin-layout">
+        <aside id="menu-lateral" class="menu-lateral colapsado" aria-label="Menú lateral del administrador">
+            <div class="menu-lateral__seccion">
+                <div>
+                    <button class="btn-toggle-sidebar" aria-expanded="true" aria-controls="menu-lateral">☰</button>
                 </div>
-              </td>
-            </tr>
-            <!-- Usuario 2 La idea es que después lo borremos cuando JS inyecte usuarios de forma automática, aunque sepa moya cómo lo vamos a hacer -->
-            <tr>
-              <td>2</td>
-              <td>16555000-2</td>
-              <td>Carlos</td>
-              <td>Soto</td>
-              <td>Rivas</td>
-              <td>carlos@example.com</td>
-              <td>••••••••</td>
-              <td>1985-07-08</td>
-              <td>2</td>
-              <td>+56 9 8765 4321</td>
-              <td>Calle Falsa 123</td>
-              <td>V</td>
-              <td>Valparaíso</td>
-              <td>2</td>
-              <td>Cliente frecuente</td>
-              <td>2025-07-15</td>
-              <td>
-                <div class="acciones" role="group">
-                  <a href="./usuario-detalle.html?id=2" class="btn-accion">Ver</a>
-                  <a href="./usuario-editar.html?id=2" class="btn-accion">Editar</a>
-                  <button type="button" class="btn-accion">Eliminar</button>
-                  <button type="button" class="btn-accion">Cambiar estado</button>
-                </div>
-              </td>
-            </tr>
-            <!-- Usuario 3 La idea es que después lo borremos cuando JS inyecte usuarios de forma automática, aunque sepa moya cómo lo vamos a hacer -->
-            <tr>
-              <td>3</td>
-              <td>21022033-5</td>
-              <td>María</td>
-              <td>López</td>
-              <td>Arancibia</td>
-              <td>maria@example.com</td>
-              <td>••••••••</td>
-              <td>1995-11-25</td>
-              <td>1</td>
-              <td>+56 9 1122 3344</td>
-              <td>Pje. Las Rosas 55</td>
-              <td>VIII</td>
-              <td>Concepción</td>
-              <td>1</td>
-              <td>Suscripción premium</td>
-              <td>2025-09-01</td>
-              <td>
-                <div class="acciones" role="group">
-                  <a href="./usuario-detalle.html?id=3" class="btn-accion">Ver</a>
-                  <a href="./usuario-editar.html?id=3" class="btn-accion">Editar</a>
-                  <button type="button" class="btn-accion">Eliminar</button>
-                  <button type="button" class="btn-accion">Cambiar estado</button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="17">
-                <nav class="paginacion" aria-label="Paginación" style="display:flex; gap:6px; justify-content:center; padding:10px;">
-                  <button type="button" title="Primera página">&laquo;</button>
-                  <button type="button" title="Anterior">&lsaquo;</button>
-                  <button type="button" class="pagina actual" aria-current="page">1</button>
-                  <button type="button" class="pagina">2</button>
-                  <button type="button" class="pagina">3</button>
-                  <button type="button" title="Siguiente">&rsaquo;</button>
-                  <button type="button" title="Última página">&raquo;</button>
+                <nav>
+                    <ul class="menu-lateral__lista">
+                        <li><a href="./home-admin.html">🏠 <span class="titulo">Home</span></a></li>
+                        <li><a href="./usuarios.html" aria-current="page">👤 <span class="titulo">Gestión de Usuarios</span></a></li>
+                        <li><a href="./productos-admin.html">🧁 <span class="titulo">Gestión de Productos</span></a></li>
+                        <li><a href="./ordenes.html">🛒 <span class="titulo">Órdenes</span></a></li>
+                        <li><a href="./reportes.html">📈 <span class="titulo">Reportes</span></a></li>
+                        <li><a href="./ajustes.html">⚙️ <span class="titulo">Configuración</span></a></li>
+                    </ul>
                 </nav>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      </section>
+            </div>
+        </aside>
 
-    </main>
-  </div>
+        <main id="contenido-principal" class="admin-contenido" role="main" aria-labelledby="titulo-pagina">
 
+            <header class="bloque__header-flex">
+                <h1 id="titulo-pagina">Usuarios</h1>
+                <a href="./nuevo-usuario.html" class="btn btn-primario">
+                    NUEVO USUARIO
+                </a>
+            </header>
 
+            <div class="toolbar" aria-label="Controles de la lista">
+                <div class="toolbar-izq">
+                    <label for="f-criterio" class="sr-only">Criterio</label>
+                    <select id="f-criterio" name="criterio" aria-label="Criterio de listado">
+                        <option value="">Todos los usuarios</option>
+                        <option value="activos">Activos</option>
+                        <option value="inactivos">Inactivos</option>
+                        <option value="administradores">Administradores</option>
+                        <option value="vendedores">Vendedores</option>
+                        <option value="clientes">Clientes</option>
+                    </select>
+                </div>
+            </div>
 
-
-  <footer class="admin-footer" role="contentinfo" aria-label="Información del sitio">
-    <div class="admin-footer__wrap">
-      <section aria-label="Contacto">
-        <p><strong>Mr. Pastel</strong> — Panel de Administración</p>
-        <p>Soporte: <a href="mailto:soporte@mrpastel.cl">soporte@mrpastel.cl</a></p>
-      </section>
-      <section aria-label="Legal">
-        <p>&copy; 2025 Mr. Pastel. Todos los derechos reservados.</p>
-      </section>
+            <section class="tabla-envuelta" role="region" aria-label="Tabla de usuarios">
+                <table class="tabla" aria-describedby="resumen-usuarios">
+                    <caption id="resumen-usuarios" class="sr-only">Listado de usuarios del sistema</caption>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>run</th>
+                            <th>nombres</th>
+                            <th>appaterno</th>
+                            <th>amaterno</th>
+                            <th>email</th>
+                            <th>password</th>
+                            <th>f_nacim</th>
+                            <th>id_t_usuario</th>
+                            <th>telefono</th>
+                            <th>direccion</th>
+                            <th>region</th>
+                            <th>comuna</th>
+                            <th>id_estado</th>
+                            <th>desc_aplicado</th>
+                            <th>fecha_registro</th>
+                            <th class="col-acciones">acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>19011022K</td>
+                            <td>Ana</td>
+                            <td>Pérez</td>
+                            <td>Gómez</td>
+                            <td>ana@example.com</td>
+                            <td>••••••••</td>
+                            <td>1990-03-15</td>
+                            <td>3</td>
+                            <td>+56 9 1234 5678</td>
+                            <td>Av. Siempre Viva 742</td>
+                            <td>RM</td>
+                            <td>Quinta Normal</td>
+                            <td>1</td>
+                            <td>10% bienvenida</td>
+                            <td>2025-08-20</td>
+                            <td>
+                                <div class="acciones" role="group">
+                                    <a href="./usuario-detalle.html?id=1" class="btn-accion btn-editar">Ver</a>
+                                    <a href="./usuario-editar.html?id=1" class="btn-accion btn-editar">Editar</a>
+                                    <button type="button" class="btn-accion btn-eliminar">Eliminar</button>
+                                    <button type="button" class="btn-accion btn-desactivar">Cambiar estado</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>16555000-2</td>
+                            <td>Carlos</td>
+                            <td>Soto</td>
+                            <td>Rivas</td>
+                            <td>carlos@example.com</td>
+                            <td>••••••••</td>
+                            <td>1985-07-08</td>
+                            <td>2</td>
+                            <td>+56 9 8765 4321</td>
+                            <td>Calle Falsa 123</td>
+                            <td>V</td>
+                            <td>Valparaíso</td>
+                            <td>2</td>
+                            <td>Cliente frecuente</td>
+                            <td>2025-07-15</td>
+                            <td>
+                                <div class="acciones" role="group">
+                                    <a href="./usuario-detalle.html?id=2" class="btn-accion btn-editar">Ver</a>
+                                    <a href="./usuario-editar.html?id=2" class="btn-accion btn-editar">Editar</a>
+                                    <button type="button" class="btn-accion btn-eliminar">Eliminar</button>
+                                    <button type="button" class="btn-accion btn-desactivar">Cambiar estado</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>21022033-5</td>
+                            <td>María</td>
+                            <td>López</td>
+                            <td>Arancibia</td>
+                            <td>maria@example.com</td>
+                            <td>••••••••</td>
+                            <td>1995-11-25</td>
+                            <td>1</td>
+                            <td>+56 9 1122 3344</td>
+                            <td>Pje. Las Rosas 55</td>
+                            <td>VIII</td>
+                            <td>Concepción</td>
+                            <td>1</td>
+                            <td>Suscripción premium</td>
+                            <td>2025-09-01</td>
+                            <td>
+                                <div class="acciones" role="group">
+                                    <a href="./usuario-detalle.html?id=3" class="btn-accion btn-editar">Ver</a>
+                                    <a href="./usuario-editar.html?id=3" class="btn-accion btn-editar">Editar</a>
+                                    <button type="button" class="btn-accion btn-eliminar">Eliminar</button>
+                                    <button type="button" class="btn-accion btn-desactivar">Cambiar estado</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="17">
+                                <nav class="paginacion" aria-label="Paginación">
+                                    <button type="button" title="Primera página" aria-label="Ir a la primera página" disabled>&laquo;</button>
+                                    <button type="button" title="Página anterior" aria-label="Ir a la página anterior" disabled>&lsaquo;</button>
+                                    <button type="button" class="pagina actual" aria-current="page">1</button>
+                                    <button type="button" class="pagina">2</button>
+                                    <button type="button" class="pagina">3</button>
+                                    <button type="button" title="Página siguiente" aria-label="Ir a la página siguiente">&rsaquo;</button>
+                                    <button type="button" title="Última página" aria-label="Ir a la última página">&raquo;</button>
+                                </nav>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </main>
     </div>
-  </footer>
+
+    <footer class="admin-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mr. Pastel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/PasteleriaMilSabores/JS/main.js"></script>
 </body>
+
 </html>

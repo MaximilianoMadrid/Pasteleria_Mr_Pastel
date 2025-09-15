@@ -371,6 +371,16 @@ header {
 .producto:hover {
     transform: translateY(-5px);
 }
+.ver-mas {
+    display: inline-block;
+    margin-top: 30px;
+    background: #d94f4f;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
 
 /* === FOOTER === */
 footer {
@@ -474,6 +484,7 @@ footer {
         align-items: center;
     }
 }
+
 /* === ESTILOS ESPECÍFICOS PARA PRODUCTOS === */
 /* Estilos de la sección principal del catálogo */
 #Catalogo {
@@ -528,12 +539,15 @@ footer {
     background-color: #fff;
     transition: border-color 0.3s ease;
 }
-
+#filtros option {
+    color: rgba(85, 85, 85, 0.8); /* gris con 60% opacidad */
+}
 #filtros select:hover,
 #filtros select:focus {
     border-color: #d94f4f; /* Color de acento al interactuar */
     outline: none;
 }
+
 
 /* Estilo para la galería de productos */
 /* Tomamos el mismo estilo que .grid-productos de la página de inicio */
@@ -630,6 +644,85 @@ footer {
         gap: 10px;
     }
 }
+/* ===== Detalle Producto ===== */
+.detalle-contenedor {
+  display: flex;
+  gap: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.detalle-contenedor img {
+
+  width: 400px;
+  height: 350px;
+  border-radius: 40px;
+  object-fit: cover;
+  box-shadow: 0 15px 22px rgba(0,0,0,0.2);
+
+}
+
+.detalle-info {
+  flex: 1;
+}
+
+.detalle-info h2 {
+<
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #5f5756;
+}
+
+.descripcion {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+
+}
+
+.detalle-info .precio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #E63946;
+  margin-bottom: 20px;
+}
+
+.detalle-info label {
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.detalle-info select,
+.detalle-info textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+
+  border: 2px solid #ccc;
+  margin-bottom: 1px;
+
+}
+
+.detalle-info button {
+  background-color: #FF6F61;
+  color: white;
+
+  padding: 10px 100px;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.detalle-info button:hover {
+  background-color: #E63946;
+}
 
 /* === ESTILOS PARA NOSOTROS.HTML === */
 
@@ -658,96 +751,137 @@ footer {
     border-radius: 15px;
     margin-top: 20px;
 }
-/* Misión y Visión */
+/* Sección Misión y Visión */
 .mision-vision {
-    background: #fff0eb;
-    padding: 50px 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  background: #fff0eb;
 }
 
 .mv-box {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    flex: 1;
-    min-width: 280px;
-    max-width: 5000px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.mv-box h2 {
-    font-size: 1.8rem;
-    color: #d94f4f;
-    margin-bottom: 15px;
+.mv-texto {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Valores */
-/* ===== VALORES Y COMPROMISO - CARRUSEL FERROCARRIL ===== */
+.mv-texto h2 {
+  font-size: 1.8rem;
+  color: #d94f4f;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.mv-texto p {
+  font-size: 1rem;
+  color: #444;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.mv-imagen {
+  flex: 1;
+}
+
+.mv-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ===== VALORES Y COMPROMISO - CARRUSEL ANIMADO SIN FIN ===== */
 .valores {
-  padding: 60px 0;
-  background: #fff3e6;
-  text-align: center;
+    padding: 60px 0;
+    background: #fff3e6;
+    text-align: center;
+    overflow: hidden; 
 }
 
 .valores h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #d2691e;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #d2691e;
 }
 
 .valores-carousel {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 20px;
-  scrollbar-width:auto; /* Ocultar scroll en Firefox */
+    display: flex;
+    /* Elimina el 'gap' para un movimiento más fluido si lo deseas, o ajusta la animación para incluirlo */
+    gap: 20px; 
+    padding: 20px;
+    width: max-content; 
+    animation: infinite-scroll-banner 25s linear infinite; /* Nuevo nombre de animación y duración */
 }
 
-.valores-carousel::-webkit-scrollbar {
-  display: none; /* Ocultar scroll en Chrome/Safari */
+.valores-carousel:hover {
+    animation-play-state: paused; 
 }
 
 .valor-item {
-  flex: 0 0 auto;
-  width: 300px;
-  background: white;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-}
-
-.valor-item:hover {
-  transform: scale(1.05);
+    flex: 0 0 300px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .valor-item img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .valor-item h3 {
-  color: #ff7f50;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+    color: #ff7f50;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .valor-item p {
-  font-size: 1rem;
-  color: #555;
+    font-size: 1rem;
+    color: #555;
 }
 
+/* Define la animación del banner infinito */
+@keyframes infinite-scroll-banner {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /*
+          Esto es clave: se mueve la mitad de la distancia total del contenedor.
+          El cálculo `calc(-100% - 20px)` asume que el contenedor tiene 5 elementos
+          con un espacio de 20px entre ellos.
+          Si agregas más items, necesitarás un cálculo más complejo
+          o un valor que te funcione bien.
+          Lo más simple es usar un porcentaje que funcione para tu diseño.
+          En este caso, -50% es un buen punto de partida para 2 sets de 5.
+          El -100% que usaste antes funcionaba para 1 set de 5 pero acá la clave es que
+          se va a desplazar toda la longitud del set original.
+        */
+        transform: translateX(calc(-50% - 10px));
+    }
+}
 
-/* Equipo */
+/* NUESTRO EQUIPO */
 .equipo {
     padding: 60px 0;
     text-align: center;
@@ -761,8 +895,16 @@ footer {
 
 .equipo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Usa un número fijo de columnas en pantallas grandes y ajusta en móviles */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+    .equipo-grid {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    }
 }
 
 .integrante {
@@ -770,11 +912,12 @@ footer {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .integrante:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
 }
 
 .integrante img {
@@ -783,6 +926,8 @@ footer {
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
+    border: 4px solid #ff7f50; /* Añade un borde de color */
+    padding: 3px;
 }
 
 .integrante h3 {
@@ -796,57 +941,215 @@ footer {
     color: #666;
 }
 
-/* BLOG LISTA */
+/* Estilos para la lista de reconocimientos */
+.integrante ul {
+    list-style: none; /* Elimina los puntos predeterminados de la lista */
+    padding: 0;
+    margin-top: 15px;
+}
+
+.integrante li {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: left; /* Alinea el texto a la izquierda para mejor lectura */
+}
+
+.integrante li i {
+    color: #d94f4f; /* Color para los íconos de copa y medalla */
+    margin-right: 10px;
+}
+
+.integrante li strong {
+    font-weight: 600;
+    color: #333;
+}
+
+/* BLOG PRINCIPAL LISTA */
 .blogs-container {
   display: flex;
   gap: 30px;
   padding: 40px 0;
 }
-.blogs-main { flex: 3; }
+
+.blogs-main {
+  flex: 3;
+}
+
 .blogs-sidebar {
   flex: 1;
   background: #fff3e6;
   padding: 20px;
   border-radius: 10px;
 }
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .blogs-container {
+    flex-direction: column; /* Apila los elementos de forma vertical */
+  }
+
+  .blogs-main, .blogs-sidebar {
+    flex: none; /* Elimina la proporción para que ocupen todo el ancho */
+    width: 100%; /* Opcional, pero útil para garantizar el ancho completo */
+  }
+
+  .blogs-main {
+    order: 1; /* Asegura que el contenido principal siempre vaya primero */
+  }
+
+  .blogs-sidebar {
+    order: 2; /* Asegura que la barra lateral siempre vaya después */
+    margin-top: 20px; /* Añade un espacio entre el contenido y la barra lateral */
+  }
+}
+
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+
 .blog-card {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
 }
-.blog-img { width: 100%; height: 600px; object-fit: cover; }
-.blog-card img { width: 100%; height: 180px; object-fit: cover; }
-.blog-info { padding: 15px; }
-.blog-info h3 { font-size: 1.2rem; color: #d94f4f; }
-.meta { font-size: 0.85rem; color: #777; }
-.btn-blog {
-  display: inline-block; margin-top: 10px; padding: 8px 15px;
-  background: #d94f4f; color: #fff; text-decoration: none; border-radius: 5px;
-}
-.btn-blog:hover { background: #b83e3e; }
 
-/* BLOG DETALLE */
-.blog-detalle-container { display: flex; gap: 30px; padding: 40px 0; }
-.blog-content { flex: 3; }
-.blog-content img { width: 100%; border-radius: 10px; margin-bottom: 20px;  }
-.sidebar { flex: 1; background: #fff3e6; padding: 20px; border-radius: 10px; }
-.sidebar h3 { margin-bottom: 10px; color: #d94f4f; }
-.sidebar ul li { margin-bottom: 8px; }
-.social-share a{color: #040404;font-size: 1.5rem;transition: color 0.3s ease;}
-.social-share a:hover{color: #f50707;}
-.comments { margin-top: 40px; padding: 10px;}
-.comments form { display: flex; flex-direction: column; gap: 10px; }
-.comments input, .comments textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-.comments button { padding: 10px; background: #d94f4f; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
-.comments button:hover { background: #b83e3e; }
+.blog-img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-info {
+  padding: 15px;
+}
+
+.blog-info h3 {
+  font-size: 1.5rem;
+  color: #d94f4f;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.btn-blog {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #d94f4f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-blog:hover {
+  background: #b83e3e;
+}
+
+/* BLOG DETALLE DE RESEÑAS*/
+.blog-detalle-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.blog-content {
+    flex: 3;
+}
+
+.blog-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    background: #fff3e6;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+    color: #d94f4f;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+}
+
+.social-share a {
+    color: #040404;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-share a:hover {
+    color: #f50707;
+}
+
+.comments {
+    margin-top: 40px;
+    padding: 10px;
+}
+
+.comments form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comments input,
+.comments textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comments button {
+    padding: 10px;
+    background: #d94f4f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comments button:hover {
+    background: #b83e3e;
+}
+
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .blog-detalle-container {
+        flex-direction: column; /* Apila el artículo y la barra lateral verticalmente */
+    }
+
+    /* Opcional: Reordenar los elementos en el DOM para que la barra lateral
+    quede después del contenido principal. Se puede lograr con flexbox 'order'. */
+    .blog-content {
+        order: 1; /* El artículo principal va primero */
+    }
+
+    .sidebar {
+        order: 2; /* La barra lateral va después del artículo */
+    }
+}
 
 
 
