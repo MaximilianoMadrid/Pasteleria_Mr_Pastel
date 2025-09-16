@@ -554,5 +554,47 @@
   </footer>
 
   <script src="/PasteleriaMilSabores/JS/main.js"></script>
+  <script>
+document.getElementById('form-nuevo-usuario').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Obtenemos los valores del formulario (esta vez con todos los campos) 
+  // aunque se puede replicar el de registro.html
+  const usuario = {
+    run: document.getElementById('run').value,
+    nombres: document.getElementById('nombres').value,
+    appaterno: document.getElementById('appaterno').value,
+    amaterno: document.getElementById('amaterno').value,
+    f_nacim: document.getElementById('f_nacim').value,
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value,
+    telefono: document.getElementById('telefono').value,
+    direccion: document.getElementById('direccion').value,
+    region: document.getElementById('region').value,
+    comuna: document.getElementById('comuna').value,
+    id_t_usuario: document.getElementById('id_t_usuario').value,
+    id_estado: document.getElementById('id_estado').value,
+    desc_aplicado: document.getElementById('desc_aplicado').value,
+    fecha_registro: document.getElementById('fecha_registro').value
+  };
+
+  // Busca si el usuario ya existe por RUN
+  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  const idx = usuarios.findIndex(u => u.run === usuario.run);
+  // Si existe, actualiza sus datos (reregistro)
+  if (idx !== -1) {
+    usuarios[idx] = usuario;
+    alert('¡Datos actualizados correctamente!');
+  // Si no existe, lo agrega
+  } else {
+    usuarios.push(usuario);
+    alert('¡Usuario registrado exitosamente!');
+  }
+
+  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  this.reset();
+}); 
+//con esto al igual que con el registro.html hara que se guarda el usuario en el local storage 
+</script>
 </body>
 </html>
