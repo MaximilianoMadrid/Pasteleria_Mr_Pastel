@@ -555,6 +555,10 @@
 
         </div>
 
+
+        <!-- Contenedor para errores -->
+        <div id="errores" class="rg-errores" aria-live="polite" style="color:#b00020; margin:8px 0;"></div>
+
         <div class="rg-actions --full">
           <button type="submit" class="rg-btn rg-btn--primary">Enviar</button>
         </div>
@@ -597,5 +601,39 @@
     </div>
     </footer>
 <script src="/PasteleriaMilSabores/JS/tienda.js"></script>
+<script src="/PasteleriaMilSabores/JS/validation.js" defer></script>
+<!-- 
+<script>
+  document.querySelector('.registro-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Obtenemos los valores del formulario (aunque recortados por conveniencia)
+  const usuario = {
+    run: document.getElementById('run').value,
+    nombres: document.getElementById('nombres').value,
+    correo: document.getElementById('correo').value,
+    contrasena: document.getElementById('contrasena').value
+  };
+
+  // Busca si el usuario ya existe por RUN
+  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  const idx = usuarios.findIndex(u => u.run === usuario.run);
+
+  if (idx !== -1) {
+    // Si existe, actualiza sus datos (reregistro)
+    usuarios[idx] = usuario;
+    alert('¡Datos actualizados correctamente!');
+  } else {
+    // Si no existe, lo agrega
+    usuarios.push(usuario);
+    alert('¡Registro exitoso!');
+  }
+
+  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  this.reset();
+});  //con esto se guarda el usuario en el local storage 
+</script>
+-->
+
 </body>
 </html>
